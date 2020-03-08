@@ -1,0 +1,363 @@
+{
+  "@@last_modified": "2020-03-08T11:17:52.585469",
+  "ButtonUpdate_label": "Uppdatera",
+  "@ButtonUpdate_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonSignOut_label": "Logga ut",
+  "@ButtonSignOut_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonAdd_label": "Lägg till",
+  "@ButtonAdd_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonOk_label": "OK",
+  "@ButtonOk_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonSignIn_label": "Logga in",
+  "@ButtonSignIn_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AlertAddDevice_title": "Hallå där!",
+  "@AlertAddDevice_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AlertAddDevice_content": "Var vänlig och fyll i fälten!",
+  "@AlertAddDevice_content": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_label": "E-post",
+  "@FieldEmail_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_signInValidate": "Ange din e-post",
+  "@FieldEmail_signInValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_registerValidate": "Ange en e-post",
+  "@FieldEmail_registerValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_signInHint": "Din e-post",
+  "@FieldEmail_signInHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_registerHint": "Ange en e-post",
+  "@FieldEmail_registerHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldRegister_label": "Registrera",
+  "@FieldRegister_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_label": "Lösenord",
+  "@FieldPassword_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_signInValidate": "Ange ditt lösenord",
+  "@FieldPassword_signInValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_registerValidate": "Ange ett lösenord, 6+ bokstäver långt",
+  "@FieldPassword_registerValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_signInHint": "Ditt lösenord",
+  "@FieldPassword_signInHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_registerHint": "Ange ett lösenord",
+  "@FieldPassword_registerHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldSignIn_label": "Logga in",
+  "@FieldSignIn_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Register_title": "Registrera",
+  "@Register_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "SignIn_title": "Logga in",
+  "@SignIn_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_device": "Enhet",
+  "@Titles_device": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_edit": "Redigera",
+  "@Titles_edit": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_home": "Hem",
+  "@Titles_home": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_time": "Tid",
+  "@Titles_time": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_remote": "Fjärr",
+  "@Titles_remote": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "HelpText_addDevice": "Använd menyn uppe till höger för att lägga till en enhet!",
+  "@HelpText_addDevice": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDevices_title": "Lägg till enheter",
+  "@AddDevices_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Settings_title": "Inställningar",
+  "@Settings_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Device_title": "Enhet",
+  "@Device_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Menu_title": "Meny",
+  "@Menu_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Main_title": "Styra",
+  "@Main_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_name": "Namn: ",
+  "@DeviceFields_name": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_host": "Värd: ",
+  "@DeviceFields_host": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_requestPort": "Begäran port: ",
+  "@DeviceFields_requestPort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_type": "typ: ",
+  "@DeviceFields_type": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_weight": "vikt: ",
+  "@DeviceFields_weight": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_id": "Id: ",
+  "@DeviceFields_id": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateHost": "Ange värd",
+  "@AddDeviceStrings_validateHost": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_hostLabel": "värd:",
+  "@AddDeviceStrings_hostLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateName": "Ange Namn",
+  "@AddDeviceStrings_validateName": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_nameLabel": "namn: ",
+  "@AddDeviceStrings_nameLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateRequestPort": "Ange begäran port",
+  "@AddDeviceStrings_validateRequestPort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateType": "Ange typ",
+  "@AddDeviceStrings_validateType": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_portLabel": "port: ",
+  "@AddDeviceStrings_portLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_typeLabel": "port: ",
+  "@AddDeviceStrings_typeLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_portRequestLabel": "begäran port: ",
+  "@AddDeviceStrings_portRequestLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "MagicOther_magicDevice": "Magic Mirror",
+  "@MagicOther_magicDevice": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "MagicFields_mmPort": "MM Port: ",
+  "@MagicFields_mmPort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "MagicFields_validatePort": "Ange MM port",
+  "@MagicFields_validatePort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddMagicStrings_title": "Magic Mirror",
+  "@AddMagicStrings_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "EnergenieOther_energenieDevice": "Energenie",
+  "@EnergenieOther_energenieDevice": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddEnergenieStrings_title": "Energenie enhet",
+  "@AddEnergenieStrings_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorNetwork_unknown": "Unknown",
+  "@ErrorNetwork_unknown": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorNetwork_timeout": "Timeout",
+  "@ErrorNetwork_timeout": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorNetwork_socket": "Socket",
+  "@ErrorNetwork_socket": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_title": "Oops..",
+  "@ErrorSomething_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_message": "Something went wrong...",
+  "@ErrorSomething_message": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_signInError": "User credentials failed",
+  "@ErrorSomething_signInError": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_registerError": "please provide valid email and password",
+  "@ErrorSomething_registerError": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  }
+}

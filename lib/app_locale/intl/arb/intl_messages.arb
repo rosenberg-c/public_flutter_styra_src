@@ -1,0 +1,363 @@
+{
+  "@@last_modified": "2020-03-08T11:28:17.370034",
+  "ButtonUpdate_label": "Update",
+  "@ButtonUpdate_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonSignOut_label": "Sign Out",
+  "@ButtonSignOut_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonAdd_label": "Add",
+  "@ButtonAdd_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonOk_label": "OK",
+  "@ButtonOk_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ButtonSignIn_label": "Sign In",
+  "@ButtonSignIn_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AlertAddDevice_title": "Hey there!",
+  "@AlertAddDevice_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AlertAddDevice_content": "Please fill out the fields!!!!!",
+  "@AlertAddDevice_content": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_label": "Email",
+  "@FieldEmail_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_signInValidate": "Enter your email",
+  "@FieldEmail_signInValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_registerValidate": "Enter an email",
+  "@FieldEmail_registerValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_signInHint": "Your email",
+  "@FieldEmail_signInHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldEmail_registerHint": "Enter an email",
+  "@FieldEmail_registerHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldRegister_label": "Register",
+  "@FieldRegister_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_label": "Password",
+  "@FieldPassword_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_signInValidate": "Provide your password",
+  "@FieldPassword_signInValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_registerValidate": "Provide an password 6+ chars long",
+  "@FieldPassword_registerValidate": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_signInHint": "Your password",
+  "@FieldPassword_signInHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldPassword_registerHint": "Enter a password",
+  "@FieldPassword_registerHint": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "FieldSignIn_label": "Sign In",
+  "@FieldSignIn_label": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Register_title": "Register",
+  "@Register_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "SignIn_title": "Sign in",
+  "@SignIn_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_device": "Device",
+  "@Titles_device": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_edit": "Edit",
+  "@Titles_edit": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_home": "Home",
+  "@Titles_home": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_time": "Time",
+  "@Titles_time": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Titles_remote": "Remote",
+  "@Titles_remote": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "HelpText_addDevice": "Use the menu in the upper right to add a device!",
+  "@HelpText_addDevice": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDevices_title": "Add Devices",
+  "@AddDevices_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Settings_title": "Settings",
+  "@Settings_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Device_title": "Device",
+  "@Device_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Menu_title": "Menu",
+  "@Menu_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "Main_title": "Styra",
+  "@Main_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_name": "Name: ",
+  "@DeviceFields_name": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_host": "Host: ",
+  "@DeviceFields_host": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_requestPort": "Request Port: ",
+  "@DeviceFields_requestPort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_type": "type: ",
+  "@DeviceFields_type": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_weight": "weight: ",
+  "@DeviceFields_weight": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "DeviceFields_id": "Id: ",
+  "@DeviceFields_id": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateHost": "Enter host",
+  "@AddDeviceStrings_validateHost": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_hostLabel": "host:",
+  "@AddDeviceStrings_hostLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateName": "Enter Name",
+  "@AddDeviceStrings_validateName": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_nameLabel": "name: ",
+  "@AddDeviceStrings_nameLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateRequestPort": "Enter request port",
+  "@AddDeviceStrings_validateRequestPort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_validateType": "Enter type",
+  "@AddDeviceStrings_validateType": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_portLabel": "port: ",
+  "@AddDeviceStrings_portLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_typeLabel": "port: ",
+  "@AddDeviceStrings_typeLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddDeviceStrings_portRequestLabel": "request port: ",
+  "@AddDeviceStrings_portRequestLabel": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "MagicOther_magicDevice": "Magic Mirror",
+  "@MagicOther_magicDevice": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "MagicFields_mmPort": "MM Port: ",
+  "@MagicFields_mmPort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "MagicFields_validatePort": "Enter MM port",
+  "@MagicFields_validatePort": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddMagicStrings_title": "Magic Decive",
+  "@AddMagicStrings_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "EnergenieOther_energenieDevice": "Energenie",
+  "@EnergenieOther_energenieDevice": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddEnergenieStrings_title": "Energenie Device",
+  "@AddEnergenieStrings_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorNetwork_unknown": "Unknown",
+  "@ErrorNetwork_unknown": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorNetwork_timeout": "Timeout",
+  "@ErrorNetwork_timeout": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorNetwork_socket": "Socket",
+  "@ErrorNetwork_socket": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_title": "Oops..",
+  "@ErrorSomething_title": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_message": "Something went wrong...",
+  "@ErrorSomething_message": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_signInError": "User credentials failed",
+  "@ErrorSomething_signInError": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ErrorSomething_registerError": "please provide valid email and password",
+  "@ErrorSomething_registerError": {
+    "description": "",
+    "type": "text",
+    "placeholders": {}
+  }
+}
