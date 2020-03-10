@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/device/device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
+import 'package:flutter_styra/screens/devices/support/picker.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
-import 'package:flutter_styra/shared/constants/db_keys.dart';
 import 'package:flutter_styra/shared/functions/utils.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
-import 'package:flutter_picker/Picker.dart';
 import 'package:provider/provider.dart';
 
 class MagicEditPage extends StatefulWidget {
@@ -126,41 +125,22 @@ class _MagicEditPageState extends State<MagicEditPage> {
     );
   }
 
-  getPickerModal(ctx) {
-    showPickerModal(BuildContext context) {
-      new Picker(
-        adapter: PickerDataAdapter(
-            data: _weightList
-                .map(
-                  (v) => PickerItem(
-                    text: Text(v.toString()),
-                  ),
-                )
-                .toList()),
-        changeToFirst: true,
-        hideHeader: false,
-        onSelect: (picker, col, val) {
-          setState(() {
-            _weight = _weightList[val[0]];
-          });
-        },
-//        onConfirm: (Picker picker, List value) {
-//          print(value.toString());
-//          print(picker.adapter.text);
-//        },
-      ).showModal(ctx); //_scaffoldKey.currentState);
-    }
-
-    return showPickerModal(ctx);
-  }
-
   Widget _buildWeight(ctx) {
     return ListTile(
       title: Text("Weight"),
       trailing: Text(_weight.toString()),
       onTap: () {
         if (widget.inEdit) {
-          return getPickerModal(ctx);
+          return getWeightPicker(
+            ctx: ctx,
+            weights: _weightList,
+            weight: _weight,
+            onSelected: (val) {
+              setState(() {
+                _weight = _weightList[val];
+              });
+            },
+          );
         }
       },
     );

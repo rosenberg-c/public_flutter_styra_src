@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_picker/Picker.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/device/device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
+import 'package:flutter_styra/screens/devices/support/picker.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/functions/utils.dart';
@@ -15,11 +15,12 @@ class EnergenieEditPage extends StatefulWidget {
   final inEdit;
   final DeviceDatabaseService databaseService;
 
-  EnergenieEditPage(
-      {@required this.authUser,
-      @required this.device,
-      @required this.inEdit,
-      @required this.databaseService});
+  EnergenieEditPage({
+    @required this.authUser,
+    @required this.device,
+    @required this.inEdit,
+    @required this.databaseService,
+  });
 
   @override
   _EnergenieEditPageState createState() => _EnergenieEditPageState();
@@ -105,41 +106,22 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
     );
   }
 
-  getPickerModal(ctx) {
-    showPickerModal(BuildContext context) {
-      new Picker(
-        adapter: PickerDataAdapter(
-            data: _weightList
-                .map(
-                  (v) => PickerItem(
-                    text: Text(v.toString()),
-                  ),
-                )
-                .toList()),
-        changeToFirst: true,
-        hideHeader: false,
-        onSelect: (picker, col, val) {
-          setState(() {
-            _weight = _weightList[val[0]];
-          });
-        },
-//        onConfirm: (Picker picker, List value) {
-//          print(value.toString());
-//          print(picker.adapter.text);
-//        },
-      ).showModal(ctx); //_scaffoldKey.currentState);
-    }
-
-    return showPickerModal(ctx);
-  }
-
   Widget _buildWeight(ctx) {
     return ListTile(
       title: Text("Weight"),
       trailing: Text(_weight.toString()),
       onTap: () {
         if (widget.inEdit) {
-          return getPickerModal(ctx);
+          return getWeightPicker(
+            ctx: ctx,
+            weights: _weightList,
+            weight: _weight,
+            onSelected: (val) {
+              setState(() {
+                _weight = _weightList[val];
+              });
+            },
+          );
         }
       },
     );
@@ -166,7 +148,8 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
         id: widget.device.id,
         name: _name ?? widget.device.name.trim(),
         host: _host ?? widget.device.host.trim(),
-        requestPort: int.parse(_requestPort.trim()) ?? widget.device.requestPort,
+        requestPort:
+            int.parse(_requestPort.trim()) ?? widget.device.requestPort,
         type: _type ?? widget.device.type.trim(),
         weight: _weight ?? widget.device.weight,
       );
@@ -174,11 +157,10 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
       Navigator.of(context).popUntil(
         (route) => route.isFirst,
       );
-      if (_formKey.currentState.validate()) {}
     }
   }
 
-  _submit() {
+  _buildSubmit() {
     final theme = Provider.of<ThemeService>(context);
 
     return Padding(
@@ -219,7 +201,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
           _buildRPort(),
           _buildWeight(context),
           _buildId(),
-          _submit(),
+          _buildSubmit(),
           SizedBox(height: 20.0),
         ],
       ),
