@@ -127,7 +127,7 @@ class _MagicEditPageState extends State<MagicEditPage> {
 
   Widget _buildWeight(ctx) {
     return ListTile(
-      title: Text("Weight"),
+      title: Text(Strings().app.devices.fields.weight),
       trailing: Text(_weight.toString()),
       onTap: () {
         if (widget.inEdit) {

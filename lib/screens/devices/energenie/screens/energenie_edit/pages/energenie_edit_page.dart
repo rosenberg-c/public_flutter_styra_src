@@ -108,7 +108,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
 
   Widget _buildWeight(ctx) {
     return ListTile(
-      title: Text("Weight"),
+      title: Text(Strings().app.devices.fields.weight),
       trailing: Text(_weight.toString()),
       onTap: () {
         if (widget.inEdit) {
