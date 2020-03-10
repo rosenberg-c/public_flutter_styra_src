@@ -28,7 +28,6 @@ class ConcatenatedServices {
     @required DeviceDatabaseService deviceDB,
     @required String name,
     @required String host,
-    @required String mmPort,
     @required String requestPort,
     @required String type,
     @required String uid,
@@ -36,7 +35,6 @@ class ConcatenatedServices {
     final device = DeviceModel(
       name: name,
       host: host,
-      mmPort: mmPort,
       requestPort: requestPort,
       type: type,
     );
