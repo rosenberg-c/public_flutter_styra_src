@@ -1,13 +1,13 @@
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../http_service.dart';
 import 'config-get.dart';
 
-Future<dynamic> getUptime(DeviceModel device) async {
+Future<dynamic> getUptime({@required String host, @required int port}) async {
   try {
     final response = await endpointGet(
-      device.host,
-      device.requestPort,
+      host,
+      port,
       GetConfig.uptime,
     );
     return response;

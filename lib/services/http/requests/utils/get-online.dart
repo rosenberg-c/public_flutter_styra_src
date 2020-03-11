@@ -1,13 +1,13 @@
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../http_service.dart';
 import 'config-get.dart';
 
-Future<dynamic> getOnline(DeviceModel device) async {
+Future<dynamic> getOnline({@required String host, @required int port}) async {
   try {
     final response = await endpointGet(
-      device.host,
-      device.requestPort,
+      host,
+      port,
       GetConfig.online,
     );
 

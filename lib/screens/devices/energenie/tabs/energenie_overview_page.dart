@@ -22,8 +22,14 @@ class _EnergenieOverviewPageState extends State<EnergenieOverviewPage> {
   Widget _status_widget;
 
   _syncWithDevice() async {
-    final __uptime = await getUptime(widget.device);
-    final __temp = await getTemp(widget.device);
+    final __uptime = await getUptime(
+      host: widget.device.host,
+      port: widget.device.requestPort,
+    );
+    final __temp = await getTemp(
+      host: widget.device.host,
+      port: widget.device.requestPort,
+    );
     setState(() {
       _uptime = __uptime;
       _temp = __temp;
@@ -32,7 +38,10 @@ class _EnergenieOverviewPageState extends State<EnergenieOverviewPage> {
 
   @override
   void initState() {
-    getOnline(widget.device).then((val) {
+    getOnline(
+      host: widget.device.host,
+      port: widget.device.requestPort,
+    ).then((val) {
       setState(() {
         _status_widget = status_box(val);
       });

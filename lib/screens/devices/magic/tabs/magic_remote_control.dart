@@ -23,7 +23,10 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
 
   @override
   void initState() {
-    getOnline(widget.device).then((val) {
+    getOnline(
+      host: widget.device.host,
+      port: widget.device.requestPort,
+    ).then((val) {
       setState(() {
         _status_widget = status_box(val);
       });
@@ -48,7 +51,10 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                     setState(() {
                       _status_widget = status_box(false);
                     });
-                    await getOnline(widget.device);
+                    await getOnline(
+                      host: widget.device.host,
+                      port: widget.device.requestPort,
+                    );
                     setState(() {
                       _status_widget = status_box(true);
                     });
@@ -97,13 +103,19 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                         RaisedButton(
                           child: Text("Poweroff"),
                           onPressed: () async {
-                            await deviceShutdown(widget.device);
+                            await deviceShutdown(
+                              host: widget.device.host,
+                              port: widget.device.requestPort,
+                            );
                           },
                         ),
                         RaisedButton(
                           child: Text("Reboot"),
                           onPressed: () async {
-                            await deviceReboot(widget.device);
+                            await deviceReboot(
+                              host: widget.device.host,
+                              port: widget.device.requestPort,
+                            );
                           },
                         )
                       ],

@@ -80,7 +80,10 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
   void initState() {
     setupFields();
 
-    getOnline(widget.device).then((val) {
+    getOnline(
+      host: widget.device.host,
+      port: widget.device.requestPort,
+    ).then((val) {
       setState(() {
         _status_widget = status_box(val);
       });
@@ -165,7 +168,10 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
               setState(() {
                 _status_widget = status_box(false);
               });
-              await getOnline(widget.device);
+              await getOnline(
+                host: widget.device.host,
+                port: widget.device.requestPort,
+              );
               setState(() {
                 _status_widget = status_box(true);
               });
