@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/models/device/device_model.dart';
 import 'package:flutter_styra/screens/webview/webview_screen.dart';
-import 'package:flutter_styra/services/http/requests/backlight_control/backlight-control-off.dart';
-import 'package:flutter_styra/services/http/requests/backlight_control/backlight-control-on.dart';
-import 'package:flutter_styra/services/http/requests/device_control/device-control-reboot.dart';
-import 'package:flutter_styra/services/http/requests/device_control/device-control-shutdown.dart';
-import 'package:flutter_styra/services/http/requests/utils/get-online.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/backlight_control/backlight-control-off.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/backlight_control/backlight-control-on.dart';
+import 'package:flutter_styra/services/http/requests/general/device_control/device-control-reboot.dart';
+import 'package:flutter_styra/services/http/requests/general/device_control/device-control-shutdown.dart';
+import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/shared/connection_status.dart';
 
 class MagicRemoteControl extends StatefulWidget {

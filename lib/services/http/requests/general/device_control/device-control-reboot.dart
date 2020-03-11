@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../http_service.dart';
+import 'package:flutter_styra/services/http/http_service.dart';
 import 'config-device-control.dart';
 
 deviceReboot({@required String host, @required int port}) async {

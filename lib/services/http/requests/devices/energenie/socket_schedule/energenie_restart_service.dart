@@ -1,6 +1,6 @@
 import 'package:flutter_styra/models/device/device_model.dart';
 
-import '../../http_service.dart';
+import 'package:flutter_styra/services/http/http_service.dart';
 import 'config-energenie.dart';
 
 restartEnergenieService(DeviceModel device) async {
