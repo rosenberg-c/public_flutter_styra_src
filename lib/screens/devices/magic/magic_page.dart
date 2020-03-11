@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app/strings_app.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/device/device_mirror_model.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/widgets/appBar/text.dart';
 import 'package:flutter_styra/shared/widgets/loading/loading.dart';
@@ -13,8 +13,9 @@ import 'tabs/magic_time_delta_edit.dart';
 
 class MagicPage extends StatefulWidget {
   final String title;
+  final DeviceMirrorModel device;
 
-  MagicPage({@required this.title});
+  MagicPage({@required this.title, @required this.device});
 
   @override
   _MagicPageState createState() => _MagicPageState();
@@ -24,26 +25,23 @@ class _MagicPageState extends State<MagicPage> {
   int _selectedPage = 0;
   List<Widget> _pageOptions = [];
 
-  DeviceModel _device;
-
   @override
   Widget build(BuildContext context) {
-    _device = Provider.of<DeviceModel>(context);
     final theme = Provider.of<ThemeService>(context);
 
-    if (_device == null) {
+    if (widget.device == null) {
       return Loading();
     }
 
     _pageOptions = [
       MagicOverviewPage(
-        device: _device,
+        device: widget.device,
       ),
       MagicTimeDeltaEdit(
-        device: _device,
+        device: widget.device,
       ),
       MagicRemoteControl(
-        device: _device,
+        device: widget.device,
       )
     ];
 
@@ -59,7 +57,7 @@ class _MagicPageState extends State<MagicPage> {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return MagicEditScreen(currentDevice: _device);
+                return MagicEditScreen(currentDevice: widget.device);
               }));
             },
           )

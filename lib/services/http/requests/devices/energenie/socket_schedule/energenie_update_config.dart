@@ -1,7 +1,7 @@
 import 'package:flutter_styra/models/device/device_model.dart';
 import 'package:flutter_styra/models/energenie/energenie.dart';
-
 import 'package:flutter_styra/services/http/http_service.dart';
+
 import 'config-energenie.dart';
 
 updateEnergenieConfig(DeviceModel device, EnergenieConfigModel delta) async {

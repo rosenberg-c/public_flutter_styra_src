@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:provider/provider.dart';
 
 class Loading extends StatelessWidget {

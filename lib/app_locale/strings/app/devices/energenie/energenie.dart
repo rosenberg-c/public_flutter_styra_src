@@ -6,6 +6,7 @@ class EnergenieOther {
         name: 'EnergenieOther_energenieDevice', desc: '');
   }
 }
+
 class AddEnergenieStrings {
   String get title {
     return Intl.message("Energenie Device",

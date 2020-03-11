@@ -11,6 +11,7 @@ class MagicFields {
   String get mmPort {
     return Intl.message('MM Port: ', name: 'MagicFields_mmPort', desc: '');
   }
+
   String get validatePort {
     return Intl.message("Enter MM port",
         name: 'MagicFields_validatePort', desc: '');

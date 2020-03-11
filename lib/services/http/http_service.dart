@@ -18,8 +18,7 @@ Future<dynamic> endpointGet(String url, int port, String request) async {
   }
 }
 
-Future<dynamic> endpointPost(
-    String url, int port, String request, map) async {
+Future<dynamic> endpointPost(String url, int port, String request, map) async {
   final uri = Uri.http("$url:$port", "$request");
   try {
     final response = await http.post(uri,

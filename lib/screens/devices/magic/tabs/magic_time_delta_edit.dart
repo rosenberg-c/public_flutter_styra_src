@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_styra/models/backlight/backlight.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/device/device_mirror_model.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/backlight_schedule/backlight_get_config.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/backlight_schedule/backlight_restart_service.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/backlight_schedule/backlight_update_config.dart';
@@ -14,7 +14,7 @@ import 'package:numberpicker/numberpicker.dart';
 import 'package:provider/provider.dart';
 
 class MagicTimeDeltaEdit extends StatefulWidget {
-  final DeviceModel device;
+  final DeviceMirrorModel device;
 
   //final BacklightConfigModel delta;
 

@@ -103,8 +103,9 @@ class _AddMagicState extends State<AddMagic> {
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.magic.fields.mmPort),
         keyboardType: TextInputType.text,
-        validator: (val) =>
-            validateInputInt(val) ? null : Strings().app.devices.magic.fields.validatePort,
+        validator: (val) => validateInputInt(val)
+            ? null
+            : Strings().app.devices.magic.fields.validatePort,
         onSaved: (String value) {
           _cMmPortCtrl.text = value.trim();
         },
@@ -121,58 +122,6 @@ class _AddMagicState extends State<AddMagic> {
         validator: (val) => validRequestPort(val) ? null : "5000",
         onSaved: (String value) {
           _cRequestPortCtrl.text = value.trim();
-        },
-      ),
-    );
-  }
-
-//  get_xxx_modal(ctx) {
-//    showPickerModal(BuildContext context) {
-//      new Picker(
-//          adapter: PickerDataAdapter(
-//            data: _deviceList.map((v)=> PickerItem(text: Text(v))).toList()
-////            data: [
-////              PickerItem(
-////                text: Text("energenie"),
-////              ),
-////              PickerItem(text: Text("magic")),
-////            ],
-//          ),
-//          changeToFirst: true,
-//          hideHeader: false,
-//          onSelect: (picker, col, val) {
-//            print(col);
-//            print(val);
-//            setState(() {
-//              _selectedType = _deviceList[val[0]].toString();
-//            });
-//          },
-//          onConfirm: (Picker picker, List value) {
-//            print(value.toString());
-//            print(picker.adapter.text);
-//          }).showModal(ctx); //_scaffoldKey.currentState);
-//    }
-//
-//    return showPickerModal(ctx);
-//  }
-
-  Widget _buildType(ctx) {
-//    return ListTile(
-//      title: Text("Device"),
-//      trailing: Text(_selectedType),
-//      onTap: () {
-//        return get_xxx_modal(ctx);
-//      },
-//    );
-    return _fieldPadding(
-      child: TextFormField(
-        decoration: InputDecoration()
-            .copyWith(labelText: Strings().app.devices.fields.type),
-        keyboardType: TextInputType.text,
-        validator: (val) =>
-            stringIsValidDevice(val) ? null : "energenie or magic",
-        onSaved: (String value) {
-          _cTypeCtrl.text = value.trim();
         },
       ),
     );

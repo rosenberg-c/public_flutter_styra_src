@@ -6,7 +6,12 @@ class BuildAppName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[Text(Strings().app.main.title, style: TextStyle().copyWith(fontSize: 24.0),)],
+      children: <Widget>[
+        Text(
+          Strings().app.main.title,
+          style: TextStyle().copyWith(fontSize: 24.0),
+        )
+      ],
     );
   }
 }

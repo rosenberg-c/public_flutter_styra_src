@@ -13,37 +13,35 @@ import 'tabs/energenie_remote_control.dart';
 
 class EnergeniePage extends StatefulWidget {
   final String title;
+  final DeviceModel device;
 
-  EnergeniePage({@required this.title});
+  EnergeniePage({@required this.title, @required this.device});
 
   @override
-  EenergeniePageState createState() => EenergeniePageState();
+  EnergeniePageState createState() => EnergeniePageState();
 }
 
-class EenergeniePageState extends State<EnergeniePage> {
+class EnergeniePageState extends State<EnergeniePage> {
   int _selectedPage = 0;
   List<Widget> _pageOptions = [];
 
-  DeviceModel _device;
-
   @override
   Widget build(BuildContext context) {
-    _device = Provider.of<DeviceModel>(context);
     final theme = Provider.of<ThemeService>(context);
 
-    if (_device == null) {
+    if (widget.device == null) {
       return Loading();
     }
 
     _pageOptions = [
       EnergenieOverviewPage(
-        device: _device,
+        device: widget.device,
       ),
       EnergenieTimeSchedule(
-        device: _device,
+        device: widget.device,
       ),
       EnergenieRemoteControl(
-        device: _device,
+        device: widget.device,
       )
     ];
 
@@ -59,7 +57,7 @@ class EenergeniePageState extends State<EnergeniePage> {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return EnergenieEditScreen(device: _device);
+                return EnergenieEditScreen(device: widget.device);
               }));
             },
           )

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firbase/services/firebase/database/storage_database_service_factory.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
 import 'package:flutter_styra/shared/constants/db_keys.dart';
 
 import 'abstract_device_database.dart';
-
 
 class DeviceDatabaseService implements DeviceDatabaseInterface {
   StorageDatabaseServiceFactory _sDB;
@@ -64,23 +62,17 @@ class DeviceDatabaseService implements DeviceDatabaseInterface {
     return didUpdate;
   }
 
-  List<DeviceModel> _fromSnapshotM(List<Map<String, dynamic>> maps) {
-    return maps.map((map) => DeviceModel.fromMap(map: map)).toList();
+  List<ResponseDevice> _fromSnapshotM(List<Map<String, dynamic>> maps) {
+    return maps.map((map) => ResponseDevice(map: map)).toList();
   }
 
-  Stream<List<DeviceModel>> get streamItems {
+  Stream<List<ResponseDevice>> get streamItems {
     return _sDB.instance.streamDBStorage.map(_fromSnapshotM);
   }
+}
 
-  @override
-  Future<DeviceModel> getDevice({String id}) async {
-    final xx = await _sDB.instance
-        .getItem(root: _root, uid: _uid, collection: _collection, id: id);
-    print("get");
-    print(xx);
-    if (xx != null) {
-      return DeviceModel.fromMap(map: xx);
-    }
-    return null;
-  }
+class ResponseDevice {
+  Map<String, dynamic> map;
+
+  ResponseDevice({this.map});
 }

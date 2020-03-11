@@ -7,5 +7,4 @@ class Devices {
   final energenie = EnergenieDevice();
   final fields = DeviceFields();
   final addFields = AddDeviceStrings();
-
 }
