@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/energenie-control-off.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/energenie-control-on.dart';
 import 'package:flutter_styra/services/http/requests/general/device_control/device-control-reboot.dart';
@@ -9,7 +9,7 @@ import 'package:flutter_styra/services/http/requests/general/utils/get-online.da
 import 'package:flutter_styra/shared/connection_status.dart';
 
 class EnergenieRemoteControl extends StatefulWidget {
-  final DeviceModel device;
+  final EnergenieDeviceModel device;
 
   EnergenieRemoteControl({this.device});
 

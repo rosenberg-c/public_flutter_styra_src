@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_styra/models/device/device_mirror_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/screens/webview/webview_screen.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/backlight_control/backlight-control-off.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/backlight_control/backlight-control-on.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_styra/services/http/requests/general/utils/get-online.da
 import 'package:flutter_styra/shared/connection_status.dart';
 
 class MagicRemoteControl extends StatefulWidget {
-  final DeviceMirrorModel device;
+  final MagicDeviceModel device;
 
   MagicRemoteControl({this.device});
 

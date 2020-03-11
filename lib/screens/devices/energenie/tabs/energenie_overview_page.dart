@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-temp.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-uptime.dart';
@@ -8,7 +8,7 @@ import 'package:flutter_styra/shared/connection_status.dart';
 import 'package:provider/provider.dart';
 
 class EnergenieOverviewPage extends StatefulWidget {
-  final DeviceModel device;
+  final EnergenieDeviceModel device;
 
   EnergenieOverviewPage({@required this.device});
 

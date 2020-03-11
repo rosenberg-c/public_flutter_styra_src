@@ -1,10 +1,11 @@
-import 'package:flutter_styra/models/device/device_model.dart';
-import 'package:flutter_styra/models/energenie/energenie.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_schedule_config.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
 
 import 'config-energenie.dart';
 
-updateEnergenieConfig(DeviceModel device, EnergenieConfigModel delta) async {
+updateEnergenieConfig(
+    EnergenieDeviceModel device, EnergenieScheduleConfig delta) async {
   try {
     final response = await endpointPost(
       device.host,
@@ -12,11 +13,11 @@ updateEnergenieConfig(DeviceModel device, EnergenieConfigModel delta) async {
       EnergenieEndpoint.postConfig,
       delta.toMap(),
     );
-    return EnergenieConfigModel.fromMap(map: response);
+    return EnergenieScheduleConfig.fromMap(map: response);
   } catch (e) {
     print('Error in ${updateEnergenieConfig}');
     print(e);
   }
   print("Return Empty ${updateEnergenieConfig}");
-  return EnergenieConfigModel.empty();
+  return EnergenieScheduleConfig.empty();
 }

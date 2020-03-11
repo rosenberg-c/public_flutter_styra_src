@@ -1,9 +1,9 @@
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
 
 import 'config-energenie.dart';
 
-restartEnergenieService(DeviceModel device) async {
+restartEnergenieService(EnergenieDeviceModel device) async {
   try {
     final response = await endpointGet(
       device.host,

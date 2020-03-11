@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
 import 'package:flutter_styra/services/storage/concatenated/storage_concatenated_services.dart';
@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 import 'pages/energenie_edit_page.dart';
 
 class EnergenieEditScreen extends StatefulWidget {
-  final DeviceModel device;
+  final EnergenieDeviceModel device;
 
   EnergenieEditScreen({@required this.device});
 

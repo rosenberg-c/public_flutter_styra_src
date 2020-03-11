@@ -1,6 +1,6 @@
 import 'package:flutter_styra/shared/util-map.dart';
 
-class EnergenieConfigModel {
+class EnergenieScheduleConfig {
   bool autoOff;
   bool autoOn;
   String disableFrom;
@@ -9,7 +9,7 @@ class EnergenieConfigModel {
   final String name;
   int updateCycle;
 
-  EnergenieConfigModel({
+  EnergenieScheduleConfig({
     this.autoOff,
     this.autoOn,
     this.disableFrom,
@@ -19,8 +19,8 @@ class EnergenieConfigModel {
     this.updateCycle,
   });
 
-  static EnergenieConfigModel fromMap({Map<String, dynamic> map}) {
-    return EnergenieConfigModel(
+  static EnergenieScheduleConfig fromMap({Map<String, dynamic> map}) {
+    return EnergenieScheduleConfig(
       autoOff: getKey(map, "auto_off", false),
       autoOn: getKey(map, "auto_on", false),
       disableFrom: getKey(map, "disable_from", "00:00:00"),
@@ -31,8 +31,8 @@ class EnergenieConfigModel {
     );
   }
 
-  static EnergenieConfigModel empty() {
-    return EnergenieConfigModel.fromMap(map: {});
+  static EnergenieScheduleConfig empty() {
+    return EnergenieScheduleConfig.fromMap(map: {});
   }
 
   Map<String, dynamic> toMap() {

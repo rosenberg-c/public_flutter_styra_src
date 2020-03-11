@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
-import 'package:flutter_styra/models/energenie/energenie.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_schedule_config.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/energenie_get_config.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/energenie_restart_service.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/energenie_update_config.dart';
@@ -14,7 +14,7 @@ import 'package:numberpicker/numberpicker.dart';
 import 'package:provider/provider.dart';
 
 class EnergenieTimeSchedule extends StatefulWidget {
-  final DeviceModel device;
+  final EnergenieDeviceModel device;
 
   EnergenieTimeSchedule({this.device});
 
@@ -23,7 +23,7 @@ class EnergenieTimeSchedule extends StatefulWidget {
 }
 
 class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
-  EnergenieConfigModel _delta_config = EnergenieConfigModel.empty();
+  EnergenieScheduleConfig _delta_config = EnergenieScheduleConfig.empty();
   Timer _timer;
   Widget _status_widget;
 

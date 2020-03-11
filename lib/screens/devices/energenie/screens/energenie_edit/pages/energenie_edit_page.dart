@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/screens/devices/support/picker.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 class EnergenieEditPage extends StatefulWidget {
   final DeviceAuthUser authUser;
-  final DeviceModel device;
+  final EnergenieDeviceModel device;
   final inEdit;
   final DeviceDatabaseService databaseService;
 
@@ -144,7 +144,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
         return;
       }
       _formKey.currentState.save();
-      final newDevice = DeviceModel(
+      final newDevice = EnergenieDeviceModel(
         id: widget.device.id,
         name: _name ?? widget.device.name.trim(),
         host: _host ?? widget.device.host.trim(),

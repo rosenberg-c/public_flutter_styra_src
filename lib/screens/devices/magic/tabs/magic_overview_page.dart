@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styra/models/device/device_mirror_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-temp.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-uptime.dart';
@@ -8,7 +8,7 @@ import 'package:flutter_styra/shared/connection_status.dart';
 import 'package:provider/provider.dart';
 
 class MagicOverviewPage extends StatefulWidget {
-  final DeviceMirrorModel device;
+  final MagicDeviceModel device;
 
   MagicOverviewPage({@required this.device});
 

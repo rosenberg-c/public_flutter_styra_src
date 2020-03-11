@@ -1,6 +1,6 @@
 import 'package:flutter_styra/shared/util-map.dart';
 
-class BacklightConfigModel {
+class MagicScheduleModel {
   bool autoOff;
   bool autoOn;
   String disableFrom;
@@ -9,7 +9,7 @@ class BacklightConfigModel {
   final String name;
   int updateCycle;
 
-  BacklightConfigModel({
+  MagicScheduleModel({
     this.autoOff,
     this.autoOn,
     this.disableFrom,
@@ -19,8 +19,8 @@ class BacklightConfigModel {
     this.updateCycle,
   });
 
-  static BacklightConfigModel fromMap({Map<String, dynamic> map}) {
-    return BacklightConfigModel(
+  static MagicScheduleModel fromMap({Map<String, dynamic> map}) {
+    return MagicScheduleModel(
       autoOff: getKey(map, "auto_off", false),
       autoOn: getKey(map, "auto_on", false),
       disableFrom: getKey(map, "disable_from", "00:00:00"),
@@ -31,8 +31,8 @@ class BacklightConfigModel {
     );
   }
 
-  static BacklightConfigModel empty() {
-    return BacklightConfigModel.fromMap(map: {});
+  static MagicScheduleModel empty() {
+    return MagicScheduleModel.fromMap(map: {});
   }
 
   Map<String, dynamic> toMap() {

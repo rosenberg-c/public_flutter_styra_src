@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 
 import 'database/items/item_database_service.dart';
 
@@ -13,7 +13,7 @@ class ConcatenatedServices {
     @required String type,
     @required String uid,
   }) async {
-    final device = DeviceModel(
+    final device = EnergenieDeviceModel(
       name: name,
       host: host,
       mmPort: mmPort,
@@ -32,7 +32,7 @@ class ConcatenatedServices {
     @required String type,
     @required String uid,
   }) async {
-    final device = DeviceModel(
+    final device = EnergenieDeviceModel(
       name: name,
       host: host,
       requestPort: requestPort,

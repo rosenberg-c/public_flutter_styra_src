@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app/strings_app.dart';
-import 'package:flutter_styra/models/device/device_mirror_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/widgets/appBar/text.dart';
 import 'package:flutter_styra/shared/widgets/loading/loading.dart';
@@ -13,7 +13,7 @@ import 'tabs/magic_time_delta_edit.dart';
 
 class MagicPage extends StatefulWidget {
   final String title;
-  final DeviceMirrorModel device;
+  final MagicDeviceModel device;
 
   MagicPage({@required this.title, @required this.device});
 

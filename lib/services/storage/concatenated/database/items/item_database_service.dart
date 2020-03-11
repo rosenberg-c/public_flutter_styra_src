@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firbase/services/firebase/database/storage_database_service_factory.dart';
+import 'package:flutter_styra/models/response_device.dart';
 import 'package:flutter_styra/shared/constants/db_keys.dart';
 
 import 'abstract_device_database.dart';
@@ -69,10 +70,4 @@ class DeviceDatabaseService implements DeviceDatabaseInterface {
   Stream<List<ResponseDevice>> get streamItems {
     return _sDB.instance.streamDBStorage.map(_fromSnapshotM);
   }
-}
-
-class ResponseDevice {
-  Map<String, dynamic> map;
-
-  ResponseDevice({this.map});
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app/strings_app.dart';
-import 'package:flutter_styra/models/device/device_model.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/screens/devices/energenie/tabs/energenie_time_schedule_edit.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/widgets/appBar/text.dart';
@@ -13,7 +13,7 @@ import 'tabs/energenie_remote_control.dart';
 
 class EnergeniePage extends StatefulWidget {
   final String title;
-  final DeviceModel device;
+  final EnergenieDeviceModel device;
 
   EnergeniePage({@required this.title, @required this.device});
 

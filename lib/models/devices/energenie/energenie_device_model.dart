@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_styra/shared/util-map.dart';
 
-class DeviceModel {
+class EnergenieDeviceModel {
   String id = "";
   String name;
   String host;
@@ -10,7 +10,7 @@ class DeviceModel {
   String type;
   int _weight;
 
-  DeviceModel({
+  EnergenieDeviceModel({
     id,
     @required name,
     @required host,
@@ -44,8 +44,8 @@ class DeviceModel {
     return 'https://${host}:${mmPort}';
   }
 
-  static DeviceModel fromMap({Map<String, dynamic> map}) {
-    return DeviceModel(
+  static EnergenieDeviceModel fromMap({Map<String, dynamic> map}) {
+    return EnergenieDeviceModel(
       id: getKey(map, "id", ""),
       name: getKey(map, "name", ""),
       host: getKey(map, "host", ""),

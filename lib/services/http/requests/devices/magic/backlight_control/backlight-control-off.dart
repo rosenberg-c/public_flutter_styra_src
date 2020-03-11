@@ -1,9 +1,9 @@
-import 'package:flutter_styra/models/device/device_mirror_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
 
 import 'config-backlight-control.dart';
 
-backlightOff(DeviceMirrorModel device) async {
+backlightOff(MagicDeviceModel device) async {
   try {
     final response = await endpointPost(
       device.host,

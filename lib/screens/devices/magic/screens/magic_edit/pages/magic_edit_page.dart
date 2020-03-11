@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
-import 'package:flutter_styra/models/device/device_mirror_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/screens/devices/support/picker.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 class MagicEditPage extends StatefulWidget {
   final DeviceAuthUser authUser;
-  final DeviceMirrorModel device;
+  final MagicDeviceModel device;
   final inEdit;
   final DeviceDatabaseService databaseService;
 
@@ -163,7 +163,7 @@ class _MagicEditPageState extends State<MagicEditPage> {
         return;
       }
       _formKey.currentState.save();
-      final newDevice = DeviceMirrorModel(
+      final newDevice = MagicDeviceModel(
         id: widget.device.id,
         name: _name ?? widget.device.name.trim(),
         host: _host ?? widget.device.host.trim(),

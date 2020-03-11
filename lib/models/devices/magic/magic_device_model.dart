@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_styra/shared/util-map.dart';
 
-class DeviceMirrorModel {
+class MagicDeviceModel {
   String id = "";
   String name;
   String host;
@@ -10,7 +10,7 @@ class DeviceMirrorModel {
   String type;
   int _weight;
 
-  DeviceMirrorModel({
+  MagicDeviceModel({
     id,
     @required name,
     @required host,
@@ -44,8 +44,8 @@ class DeviceMirrorModel {
     return 'https://${host}:${mmPort}';
   }
 
-  static DeviceMirrorModel fromMap({Map<String, dynamic> map}) {
-    return DeviceMirrorModel(
+  static MagicDeviceModel fromMap({Map<String, dynamic> map}) {
+    return MagicDeviceModel(
       id: getKey(map, "id", ""),
       name: getKey(map, "name", ""),
       host: getKey(map, "host", ""),
