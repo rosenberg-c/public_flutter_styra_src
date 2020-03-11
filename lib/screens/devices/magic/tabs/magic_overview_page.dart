@@ -22,19 +22,19 @@ class _MagicOverviewPageState extends State<MagicOverviewPage> {
   Widget _status_widget;
 
   _syncWithDevice() async {
-    final __uptime = await getUptime(
+    final _uptime_response = await getUptime(
       host: widget.device.host,
       port: widget.device.requestPort,
     );
 
-    final __temp = await getTemp(
+    final _temp_response = await getTemp(
       host: widget.device.host,
       port: widget.device.requestPort,
     );
 
     setState(() {
-      _uptime = __uptime;
-      _temp = __temp;
+      _uptime = _uptime_response;
+      _temp = _temp_response;
     });
   }
 
