@@ -21,7 +21,7 @@ class _AddMagicState extends State<AddMagic> {
   TextEditingController _cNameCtrl = TextEditingController();
   TextEditingController _cMmPortCtrl = TextEditingController();
   TextEditingController _cRequestPortCtrl = TextEditingController();
-  TextEditingController _cTypeCtrl = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
   bool _loading = false;
 
@@ -46,8 +46,8 @@ class _AddMagicState extends State<AddMagic> {
       final device = MagicDeviceModel(
         name: _cNameCtrl.text,
         host: _cHostCtrl.text,
-        mmPort: _cMmPortCtrl.text,
-        requestPort: _cRequestPortCtrl.text,
+        mmPort: int.parse(_cMmPortCtrl.text),
+        requestPort: int.parse(_cRequestPortCtrl.text),
         type: _deviceType,
       );
 

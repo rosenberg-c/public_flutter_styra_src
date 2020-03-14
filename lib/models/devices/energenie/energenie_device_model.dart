@@ -11,13 +11,13 @@ class EnergenieDeviceModel {
   int _weight;
 
   EnergenieDeviceModel({
-    id,
-    @required name,
-    @required host,
+    String id,
+    @required String name,
+    @required String host,
     mmPort = 0,
-    @required requestPort,
-    @required type,
-    weight,
+    @required int requestPort,
+    @required String type,
+    int weight,
   }) {
     this.id = id;
     this.name = name;

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styra/app_locale/strings/app/devices/energenie/energenie.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/screens/devices/devices.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
-import 'package:flutter_styra/services/storage/concatenated/storage_concatenated_services.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
 import 'package:flutter_styra/shared/widgets/modal_progress/modal_progress_wrapper.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +32,7 @@ class _AddEnergenieState extends State<AddEnergenie> {
       final device = EnergenieDeviceModel(
         name: _cNameCtrl.text,
         host: _cHostCtrl.text,
-        requestPort: _cRequestPortCtrl.text,
+        requestPort: int.parse(_cRequestPortCtrl.text),
         type: _selectedType,
       );
 
