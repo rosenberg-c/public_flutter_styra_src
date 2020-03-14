@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
-import 'package:flutter_styra/services/storage/concatenated/storage_concatenated_services.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
 import 'package:flutter_styra/shared/widgets/modal_progress/modal_progress_wrapper.dart';
 import 'package:provider/provider.dart';
@@ -43,15 +43,15 @@ class _AddMagicState extends State<AddMagic> {
 
   tryAdd(DeviceDatabaseService deviceDB) async {
     if (_formKey.currentState.validate()) {
-      await ConcatenatedServices().tryAddMagicDevice(
-        deviceDB: deviceDB,
+      final device = MagicDeviceModel(
         name: _cNameCtrl.text,
         host: _cHostCtrl.text,
         mmPort: _cMmPortCtrl.text,
         requestPort: _cRequestPortCtrl.text,
         type: _deviceType,
-        uid: widget.uid,
       );
+
+      await deviceDB.create(device: device.toMap());
       return true;
     }
     return false;

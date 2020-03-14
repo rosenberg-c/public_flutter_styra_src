@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
-import 'package:flutter_styra/services/storage/concatenated/storage_concatenated_services.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:provider/provider.dart';
 
@@ -22,11 +21,7 @@ class _EnergenieEditScreenState extends State<EnergenieEditScreen> {
   bool inEdit = false;
 
   _deleteDevice(DeviceAuthUser user, deviceDB) async {
-    await ConcatenatedServices().deviceDelete(
-      deviceDB: deviceDB,
-      uid: user.uid,
-      magicId: widget.device.id,
-    );
+    await deviceDB.delete(id: widget.device.id);
   }
 
   _buildAppBar(authUser, databaseService) {
