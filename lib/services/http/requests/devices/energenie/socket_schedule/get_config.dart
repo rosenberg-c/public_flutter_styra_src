@@ -1,23 +1,20 @@
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_schedule_config.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
+import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/config_schedule.dart';
 
-import 'config-energenie.dart';
-
-updateEnergenieConfig(
-    EnergenieDeviceModel device, EnergenieScheduleConfig delta) async {
+Future getSocketScheduleConfig(EnergenieDeviceModel device) async {
   try {
-    final response = await endpointPost(
+    final response = await endpointGet(
       device.host,
       device.requestPort,
-      EnergenieEndpoint.postConfig,
-      delta.toMap(),
+      EnergenieRequestURLs.getConfig,
     );
+
     return EnergenieScheduleConfig.fromMap(map: response);
   } catch (e) {
-    print('Error in ${updateEnergenieConfig}');
-    print(e);
+    print('Error in ${getSocketScheduleConfig}');
   }
-  print("Return Empty ${updateEnergenieConfig}");
+  print("Return Empty ${getSocketScheduleConfig}");
   return EnergenieScheduleConfig.empty();
 }

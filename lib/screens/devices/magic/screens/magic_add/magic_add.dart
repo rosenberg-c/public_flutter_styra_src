@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
-import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
+import 'package:flutter_styra/screens/devices/support/fields.dart';
+import 'package:flutter_styra/services/storage/concatenated/database/devices/item_database_service.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
 import 'package:flutter_styra/shared/widgets/modal_progress/modal_progress_wrapper.dart';
 import 'package:provider/provider.dart';
@@ -17,55 +18,34 @@ class AddMagic extends StatefulWidget {
 }
 
 class _AddMagicState extends State<AddMagic> {
+  final _formKey = GlobalKey<FormState>();
+
   TextEditingController _cHostCtrl = TextEditingController();
   TextEditingController _cNameCtrl = TextEditingController();
   TextEditingController _cMmPortCtrl = TextEditingController();
   TextEditingController _cRequestPortCtrl = TextEditingController();
 
-  final _formKey = GlobalKey<FormState>();
   bool _loading = false;
 
-  String _deviceType = "magic";
-
-  @override
-  void initState() {
-    _cHostCtrl.addListener(() {});
-    _cNameCtrl.addListener(() {});
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _cHostCtrl.dispose();
-    _cNameCtrl.dispose();
-    super.dispose();
-  }
-
-  tryAdd(DeviceDatabaseService deviceDB) async {
+  _tryAdd(DeviceDatabaseService deviceDB) async {
     if (_formKey.currentState.validate()) {
       final device = MagicDeviceModel(
         name: _cNameCtrl.text,
         host: _cHostCtrl.text,
         mmPort: int.parse(_cMmPortCtrl.text),
         requestPort: int.parse(_cRequestPortCtrl.text),
-        type: _deviceType,
       );
 
       await deviceDB.create(device: device.toMap());
+
       return true;
     }
     return false;
   }
 
-  _fieldPadding({Widget child}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 18.0),
-      child: child,
-    );
-  }
 
   Widget _buildName() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.name),
@@ -82,7 +62,7 @@ class _AddMagicState extends State<AddMagic> {
   }
 
   Widget _buildHost() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.host),
@@ -98,7 +78,7 @@ class _AddMagicState extends State<AddMagic> {
   }
 
   Widget _buildMMPort() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.magic.fields.mmPort),
@@ -114,7 +94,7 @@ class _AddMagicState extends State<AddMagic> {
   }
 
   Widget _buildRPort() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.requestPort),
@@ -144,7 +124,7 @@ class _AddMagicState extends State<AddMagic> {
         setState(() {
           _loading = true;
         });
-        bool didAdd = await tryAdd(magicDB);
+        bool didAdd = await _tryAdd(magicDB);
         setState(() {
           _loading = false;
         });

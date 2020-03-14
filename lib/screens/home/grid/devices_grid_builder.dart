@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
-import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
-import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
+import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/models/response_device.dart';
 import 'package:flutter_styra/screens/home/grid/devices_grid_builder_tile.dart';
 import 'package:flutter_styra/shared/widgets/loading/loading.dart';
@@ -21,7 +20,7 @@ class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
     }
 
     var devices = [];
-    _response_devices.forEach((d) => devices.add(convertFromMap(d)));
+    _response_devices.forEach((d) => devices.add(convertDeviceFromMap(d)));
 
     if (devices.length == 0) {
       return ListView(
@@ -50,13 +49,3 @@ class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
   }
 }
 
-convertFromMap(ResponseDevice rDevice) {
-  if (rDevice.map["type"] == "magic") {
-    return MagicDeviceModel.fromMap(map: rDevice.map);
-  }
-  if (rDevice.map["type"] == "energenie") {
-    return EnergenieDeviceModel.fromMap(map: rDevice.map);
-  }
-
-  throw Error.safeToString("Type is not supported");
-}

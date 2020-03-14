@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
-import 'package:flutter_styra/screens/devices/support/picker.dart';
-import 'package:flutter_styra/services/storage/concatenated/database/items/item_database_service.dart';
+import 'package:flutter_styra/screens/devices/support/fields.dart';
+import 'package:flutter_styra/screens/devices/support/pickers.dart';
+import 'package:flutter_styra/services/storage/concatenated/database/devices/item_database_service.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/functions/utils.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
@@ -48,15 +49,8 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
     super.initState();
   }
 
-  _fieldPadding({Widget child}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 18.0),
-      child: child,
-    );
-  }
-
   Widget _buildName() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.name),
@@ -73,7 +67,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
   }
 
   Widget _buildHost() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.host),
@@ -91,7 +85,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
   }
 
   Widget _buildRPort() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.requestPort),
@@ -112,7 +106,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
       trailing: Text(_weight.toString()),
       onTap: () {
         if (widget.inEdit) {
-          return getWeightPicker(
+          return weightPicker(
             ctx: ctx,
             weights: _weightList,
             weight: _weight,
@@ -128,7 +122,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
   }
 
   Widget _buildId() {
-    return _fieldPadding(
+    return fieldPadding(
       child: TextFormField(
         decoration: InputDecoration()
             .copyWith(labelText: Strings().app.devices.fields.id),

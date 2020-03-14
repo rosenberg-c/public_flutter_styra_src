@@ -1,21 +1,20 @@
 import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/devices/magic/magic_schedule_config.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/screen_schedule/config_screen.dart';
 
-import 'config-backlight.dart';
-
-Future getBacklightConfig(MagicDeviceModel device) async {
+updateScreenScheduleConfig(MagicDeviceModel device, MagicScheduleModel delta) async {
   try {
-    final response = await endpointGet(
+    final response = await endpointPost(
       device.host,
       device.requestPort,
-      BacklightEndpoint.getConfig,
+      MagicRequestURLs.postConfig,
+      delta.toMap(),
     );
-
     return MagicScheduleModel.fromMap(map: response);
   } catch (e) {
-    print('Error in ${getBacklightConfig}');
+    print('Error in ${updateScreenScheduleConfig}');
   }
-  print("Return Empty ${getBacklightConfig}");
+  print("Return Empty ${updateScreenScheduleConfig}");
   return MagicScheduleModel.empty();
 }

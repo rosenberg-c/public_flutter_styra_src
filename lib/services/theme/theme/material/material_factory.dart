@@ -48,6 +48,7 @@ class MaterialFactory {
       appBarTheme: appBarTheme,
       tabBarTheme: tabBarTheme,
       scaffoldBackgroundColor: scaffold,
+      dialogBackgroundColor: scaffold,
       buttonTheme: buttonThemeData,
     );
   }

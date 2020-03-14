@@ -1,19 +1,18 @@
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
+import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/config_schedule.dart';
 
-import 'config-energenie.dart';
-
-restartEnergenieService(EnergenieDeviceModel device) async {
+restartSocketService(EnergenieDeviceModel device) async {
   try {
     final response = await endpointGet(
       device.host,
       device.requestPort,
-      EnergenieEndpoint.restartConfig,
+      EnergenieRequestURLs.restartConfig,
     );
     return response;
   } catch (e) {
-    print('Error in ${restartEnergenieService}');
+    print('Error in ${restartSocketService}');
   }
-  print("Return Empty ${restartEnergenieService}");
+  print("Return Empty ${restartSocketService}");
   return false;
 }

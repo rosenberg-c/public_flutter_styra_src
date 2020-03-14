@@ -1,4 +1,4 @@
-import 'package:flutter_styra/screens/devices/devices.dart';
+import 'package:flutter_styra/models/devices/devices.dart';
 
 bool stringIsValidIp(String value) {
   Pattern pattern = r'^\d+(?:\.\d+)?$';

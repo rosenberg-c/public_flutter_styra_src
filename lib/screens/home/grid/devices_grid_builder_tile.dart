@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styra/screens/devices/devices.dart';
+import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/screens/devices/energenie/energenie_page.dart';
 import 'package:flutter_styra/screens/devices/magic/magic_page.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
@@ -24,7 +24,7 @@ _icon(String icon, context) {
   );
 }
 
-selectDevicePage(dynamic device) {
+Widget selectDevicePage(dynamic device) {
   if (device.type == DeviceItems.energenie) {
     return EnergeniePage(
       title: device.name,

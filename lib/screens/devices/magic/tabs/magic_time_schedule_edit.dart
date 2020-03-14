@@ -2,29 +2,29 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
-import 'package:flutter_styra/models/devices/energenie/energenie_schedule_config.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_schedule_config.dart';
 import 'package:flutter_styra/screens/devices/support/date.dart';
 import 'package:flutter_styra/screens/devices/support/dialogs.dart';
-import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/get_config.dart';
-import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/restart_service.dart';
-import 'package:flutter_styra/services/http/requests/devices/energenie/socket_schedule/update_config.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/screen_schedule/get_config.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/screen_schedule/restart_service.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/screen_schedule/update_config.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/connection_status.dart';
 import 'package:provider/provider.dart';
 
-class EnergenieTimeSchedule extends StatefulWidget {
-  final EnergenieDeviceModel device;
+class MagicTimeDeltaEdit extends StatefulWidget {
+  final MagicDeviceModel device;
 
-  EnergenieTimeSchedule({this.device});
+  MagicTimeDeltaEdit({this.device});
 
   @override
-  _EnergenieTimeScheduleState createState() => _EnergenieTimeScheduleState();
+  _MagicTimeDeltaEditState createState() => _MagicTimeDeltaEditState();
 }
 
-class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
-  EnergenieScheduleConfig _delta_config = EnergenieScheduleConfig.empty();
+class _MagicTimeDeltaEditState extends State<MagicTimeDeltaEdit> {
+  MagicScheduleModel _delta_config = MagicScheduleModel.empty();
   Timer _timer;
   Widget _status_widget;
 
@@ -88,7 +88,7 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
       setState(() {
         _status_widget = status_box(val);
       });
-      getSocketScheduleConfig(widget.device).then((onValue) {
+      getScreenScheduleConfig(widget.device).then((onValue) {
         _delta_config = onValue;
         setState(() {
           _setupFields();
@@ -284,8 +284,8 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
                 "${_padDigit(_enableFromHour)}:${_padDigit(_enableFromMinute)}:${_padDigit(_enableFromSecond)}";
             _delta_config.updateCycle = int.parse(_currentCycle);
 
-            await updateSocketScheduleConfig(widget.device, _delta_config);
-            await restartSocketService(widget.device);
+            await updateScreenScheduleConfig(widget.device, _delta_config);
+            await restartScreenScheduleService(widget.device);
             setState(() {
               _didUpdate = true;
             });
@@ -315,15 +315,15 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
               children: <Widget>[
                 ListTile(
                   title: Text(
-                    "Socket 1 Schedule",
+                    "Screen schedule",
                     style: TextStyle().copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
                 hideGPIO ? Container() : _buildGPIO(),
                 _buildAutoOn(),
                 _buildAutoOff(),
-                _buildEnableFrom(theme),
                 _buildDisableFrom(theme),
+                _buildEnableFrom(theme),
                 _buildCycle(),
                 SizedBox(
                   height: 20.0,
@@ -331,7 +331,7 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
                 _buildUpdateBtn(),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

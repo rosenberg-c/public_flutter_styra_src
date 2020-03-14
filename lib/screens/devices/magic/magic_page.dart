@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'screens/magic_edit/magic_edit.dart';
 import 'tabs/magic_overview_page.dart';
 import 'tabs/magic_remote_control.dart';
-import 'tabs/magic_time_delta_edit.dart';
+import 'tabs/magic_time_schedule_edit.dart';
 
 class MagicPage extends StatefulWidget {
   final String title;

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/screens/webview/webview_screen.dart';
-import 'package:flutter_styra/services/http/requests/devices/magic/backlight_control/backlight-control-off.dart';
-import 'package:flutter_styra/services/http/requests/devices/magic/backlight_control/backlight-control-on.dart';
-import 'package:flutter_styra/services/http/requests/general/device_control/device-control-reboot.dart';
-import 'package:flutter_styra/services/http/requests/general/device_control/device-control-shutdown.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/screen_control/control_off.dart';
+import 'package:flutter_styra/services/http/requests/devices/magic/screen_control/control_on.dart';
+import 'package:flutter_styra/services/http/requests/general/device_control/device_reboot.dart';
+import 'package:flutter_styra/services/http/requests/general/device_control/device_shutdown.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/shared/connection_status.dart';
 
@@ -81,11 +81,11 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                       children: <Widget>[
                         RaisedButton(
                           child: Text("On"),
-                          onPressed: () => backlightOn(widget.device),
+                          onPressed: () => magicScreenOn(widget.device),
                         ),
                         RaisedButton(
                           child: Text("Off"),
-                          onPressed: () => backlightOff(widget.device),
+                          onPressed: () => magicScreenOff(widget.device),
                         )
                       ],
                     ),

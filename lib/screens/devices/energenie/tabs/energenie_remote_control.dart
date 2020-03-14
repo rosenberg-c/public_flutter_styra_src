@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
-import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/energenie-control-off.dart';
-import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/energenie-control-on.dart';
-import 'package:flutter_styra/services/http/requests/general/device_control/device-control-reboot.dart';
-import 'package:flutter_styra/services/http/requests/general/device_control/device-control-shutdown.dart';
+import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/control_off.dart';
+import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/control_on.dart';
+import 'package:flutter_styra/services/http/requests/general/device_control/device_reboot.dart';
+import 'package:flutter_styra/services/http/requests/general/device_control/device_shutdown.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/shared/connection_status.dart';
 
@@ -76,11 +76,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text("On"),
-                    onPressed: () => energenieOn(widget.device, 1),
+                    onPressed: () => energenieSocketOn(widget.device, 1),
                   ),
                   RaisedButton(
                     child: Text("Off"),
-                    onPressed: () => energenieOff(widget.device, 1),
+                    onPressed: () => energenieSocketOff(widget.device, 1),
                   )
                 ],
               ),
@@ -97,11 +97,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text("On"),
-                    onPressed: () => energenieOn(widget.device, 2),
+                    onPressed: () => energenieSocketOn(widget.device, 2),
                   ),
                   RaisedButton(
                     child: Text("Off"),
-                    onPressed: () => energenieOff(widget.device, 2),
+                    onPressed: () => energenieSocketOff(widget.device, 2),
                   )
                 ],
               ),
@@ -118,11 +118,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text("On"),
-                    onPressed: () => energenieOn(widget.device, 3),
+                    onPressed: () => energenieSocketOn(widget.device, 3),
                   ),
                   RaisedButton(
                     child: Text("Off"),
-                    onPressed: () => energenieOff(widget.device, 3),
+                    onPressed: () => energenieSocketOff(widget.device, 3),
                   )
                 ],
               ),
@@ -139,11 +139,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text("On"),
-                    onPressed: () => energenieOn(widget.device, 4),
+                    onPressed: () => energenieSocketOn(widget.device, 4),
                   ),
                   RaisedButton(
                     child: Text("Off"),
-                    onPressed: () => energenieOff(widget.device, 4),
+                    onPressed: () => energenieSocketOff(widget.device, 4),
                   )
                 ],
               ),

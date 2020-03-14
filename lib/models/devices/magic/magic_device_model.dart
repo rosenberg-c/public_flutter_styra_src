@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/shared/util-map.dart';
 
 class MagicDeviceModel {
@@ -16,7 +17,7 @@ class MagicDeviceModel {
     @required String host,
     mmPort = 0,
     @required int requestPort,
-    @required String type,
+    String type = DeviceItems.magic,
     int weight,
   }) {
     this.id = id;

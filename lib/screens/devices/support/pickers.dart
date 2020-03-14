@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_picker/Picker.dart';
 
-getWeightPicker(
+weightPicker(
     {BuildContext ctx, List<int> weights, int weight, Function onSelected}) {
   showPickerModal(BuildContext context) {
     int selected = weights.indexOf(weight) != -1 ? weights.indexOf(weight) : 0;
