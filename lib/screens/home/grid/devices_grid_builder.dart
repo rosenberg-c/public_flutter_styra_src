@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/models/response_device.dart';
-import 'package:flutter_styra/screens/home/grid/devices_grid_builder_tile.dart';
+import 'package:flutter_styra/screens/home/grid/devices_grid_tile_builder.dart';
 import 'package:flutter_styra/shared/widgets/loading/loading.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +19,7 @@ class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
       return Loading();
     }
 
-    var devices = [];
+    List<DeviceModel> devices = [];
     _response_devices.forEach((d) => devices.add(convertDeviceFromMap(d)));
 
     if (devices.length == 0) {
@@ -31,9 +31,7 @@ class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
     }
 
     devices.sort(
-      (device_a, device_b) => device_a.weight.compareTo(
-        device_b.weight,
-      ),
+      (device_a, device_b) => device_a.weight.compareTo(device_b.weight),
     );
 
     return GridView.builder(
@@ -41,11 +39,11 @@ class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       itemBuilder: (BuildContext context, int index) {
-        return DeviceGridBuilderTile(
+
+        return DeviceGridTileBuilder(
           device: devices[index],
         );
       },
     );
   }
 }
-

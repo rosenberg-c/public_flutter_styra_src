@@ -2,12 +2,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/shared/util-map.dart';
 
-class MagicDeviceModel {
+class MagicDeviceModel extends DeviceModel {
   String id = "";
+  @override
   String name;
   String host;
   int mmPort;
   int requestPort;
+  @override
   String type;
   int _weight;
 
@@ -33,6 +35,7 @@ class MagicDeviceModel {
     this.id = id;
   }
 
+  @override
   int get weight {
     return this._weight;
   }

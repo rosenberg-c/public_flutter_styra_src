@@ -12,10 +12,9 @@ import 'tabs/energenie_overview_page.dart';
 import 'tabs/energenie_remote_control.dart';
 
 class EnergeniePage extends StatefulWidget {
-  final String title;
   final EnergenieDeviceModel device;
 
-  EnergeniePage({@required this.title, @required this.device});
+  EnergeniePage({@required this.device});
 
   @override
   EnergeniePageState createState() => EnergeniePageState();
@@ -49,7 +48,7 @@ class EnergeniePageState extends State<EnergeniePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.device.name),
         actions: <Widget>[
           FlatButton(
             child: AppBarText(

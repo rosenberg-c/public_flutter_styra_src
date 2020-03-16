@@ -24,24 +24,18 @@ _icon(String icon, context) {
   );
 }
 
-Widget selectDevicePage(dynamic device) {
+Widget selectDevicePage(DeviceModel device) {
   if (device.type == DeviceItems.energenie) {
-    return EnergeniePage(
-      title: device.name,
-      device: device,
-    );
+    return EnergeniePage(device: device);
   }
 
-  return MagicPage(
-    title: device.name,
-    device: device,
-  );
+  return MagicPage(device: device);
 }
 
-class DeviceGridBuilderTile extends StatelessWidget {
-  final dynamic device;
+class DeviceGridTileBuilder extends StatelessWidget {
+  final DeviceModel device;
 
-  DeviceGridBuilderTile({@required this.device});
+  DeviceGridTileBuilder({@required this.device});
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +43,11 @@ class DeviceGridBuilderTile extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
+        Navigator.of(context).push(MaterialPageRoute(
+            fullscreenDialog: true,
             builder: (context) {
               return selectDevicePage(device);
-            },
-          ),
-        );
+            }));
       },
       child: _buildTile(
         context: context,

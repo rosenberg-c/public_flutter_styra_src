@@ -12,10 +12,9 @@ import 'tabs/magic_remote_control.dart';
 import 'tabs/magic_time_schedule_edit.dart';
 
 class MagicPage extends StatefulWidget {
-  final String title;
   final MagicDeviceModel device;
 
-  MagicPage({@required this.title, @required this.device});
+  MagicPage({@required this.device});
 
   @override
   _MagicPageState createState() => _MagicPageState();
@@ -49,7 +48,7 @@ class _MagicPageState extends State<MagicPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.device.name),
         actions: <Widget>[
           FlatButton(
             child: AppBarText(

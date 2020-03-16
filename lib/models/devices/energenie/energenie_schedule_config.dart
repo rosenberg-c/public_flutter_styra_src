@@ -6,7 +6,7 @@ class EnergenieScheduleConfig {
   String disableFrom;
   String enableFrom;
   bool ignoreGPIO;
-  final String name;
+  String name;
   int updateCycle;
 
   EnergenieScheduleConfig({

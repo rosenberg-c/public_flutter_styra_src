@@ -2,11 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/shared/util-map.dart';
 
-class EnergenieDeviceModel {
+class EnergenieDeviceModel extends DeviceModel {
   String id = "";
+  @override
   String name;
   String host;
   int requestPort;
+  @override
   String type;
   int _weight;
 
@@ -30,6 +32,7 @@ class EnergenieDeviceModel {
     this.id = id;
   }
 
+  @override
   int get weight {
     return this._weight;
   }

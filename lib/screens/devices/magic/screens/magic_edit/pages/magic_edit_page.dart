@@ -16,11 +16,12 @@ class MagicEditPage extends StatefulWidget {
   final inEdit;
   final DeviceDatabaseService databaseService;
 
-  MagicEditPage(
-      {@required this.authUser,
-      @required this.device,
-      @required this.inEdit,
-      @required this.databaseService});
+  MagicEditPage({
+    @required this.authUser,
+    @required this.device,
+    @required this.inEdit,
+    @required this.databaseService,
+  });
 
   @override
   _MagicEditPageState createState() => _MagicEditPageState();
@@ -49,7 +50,6 @@ class _MagicEditPageState extends State<MagicEditPage> {
     });
     super.initState();
   }
-
 
   Widget _buildName() {
     return fieldPadding(
@@ -158,16 +158,20 @@ class _MagicEditPageState extends State<MagicEditPage> {
         return;
       }
       _formKey.currentState.save();
+
       final newDevice = MagicDeviceModel(
         id: widget.device.id,
         name: _name ?? widget.device.name.trim(),
         host: _host ?? widget.device.host.trim(),
-        mmPort: _mmPort.trim() ?? widget.device.mmPort,
-        requestPort: _requestPort.trim() ?? widget.device.requestPort,
+        mmPort: int.parse(_mmPort.trim()) ?? widget.device.mmPort,
+        requestPort:
+            int.parse(_requestPort.trim()) ?? widget.device.requestPort,
         type: _type ?? widget.device.type.trim(),
         weight: _weight ?? widget.device.weight,
       );
+
       await widget.databaseService.update(device: newDevice.toMap());
+
       Navigator.of(context).popUntil(
         (route) => route.isFirst,
       );
