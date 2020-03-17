@@ -35,7 +35,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
 
   String _type;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  static List<int> _weightList = getWeightList();
+  static List<int> _weightList = generateWeights();
 
   @override
   void initState() {

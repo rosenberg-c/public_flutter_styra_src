@@ -36,7 +36,7 @@ class _MagicEditPageState extends State<MagicEditPage> {
 
   String _type;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  static List<int> _weightList = getWeightList();
+  static List<int> _weightList = generateWeights();
 
   @override
   void initState() {

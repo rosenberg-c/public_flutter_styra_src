@@ -1,10 +1,11 @@
-int _weights = 10;
-
-getWeightList() {
+generateIntList({int start, int length, int steps}) {
   List<int> _weightList = List<int>.generate(
-    10,
-    (int index) => (index + 1) * _weights,
+    length,
+    (int index) => (index + start) * steps,
   );
   return _weightList;
-  // static List<int> _weightList = [100, 200];
+}
+
+generateWeights() {
+  return generateIntList(start: 2, length: 18, steps: 50);
 }
