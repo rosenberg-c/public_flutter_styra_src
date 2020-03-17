@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/devices.dart';
-import 'package:flutter_styra/models/response_device.dart';
 import 'package:flutter_styra/screens/home/grid/devices_grid_tile_builder.dart';
 import 'package:flutter_styra/shared/widgets/loading/loading.dart';
 import 'package:provider/provider.dart';
@@ -14,13 +13,10 @@ class DevicesGridBuilder extends StatefulWidget {
 class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
   @override
   Widget build(BuildContext context) {
-    var _response_devices = Provider.of<List<ResponseDevice>>(context);
-    if (_response_devices == null) {
+    List<DeviceModel> devices = Provider.of<List<DeviceModel>>(context);
+    if (devices == null) {
       return Loading();
     }
-
-    List<DeviceModel> devices = [];
-    _response_devices.forEach((d) => devices.add(convertDeviceFromMap(d)));
 
     if (devices.length == 0) {
       return ListView(
@@ -39,7 +35,6 @@ class _DevicesGridBuilderState extends State<DevicesGridBuilder> {
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       itemBuilder: (BuildContext context, int index) {
-
         return DeviceGridTileBuilder(
           device: devices[index],
         );

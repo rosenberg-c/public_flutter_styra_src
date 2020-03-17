@@ -2,7 +2,6 @@ import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/screen_control/config_screen_control.dart';
 
-
 magicScreenOn(MagicDeviceModel device) async {
   try {
     final response = await endpointPost(

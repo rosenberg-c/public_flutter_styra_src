@@ -43,7 +43,6 @@ class _AddMagicState extends State<AddMagic> {
     return false;
   }
 
-
   Widget _buildName() {
     return fieldPadding(
       child: TextFormField(

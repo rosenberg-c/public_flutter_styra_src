@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 
 fieldPadding({Widget child}) {
   return Padding(

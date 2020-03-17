@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firbase/services/firebase/database/storage_database_service_factory.dart';
-import 'package:flutter_styra/models/response_device.dart';
+import 'package:flutter_styra/models/devices/devices.dart';
+import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
+import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/shared/constants/db_keys.dart';
 
 import 'abstract_device_database.dart';
@@ -63,11 +65,25 @@ class DeviceDatabaseService implements DeviceDatabaseInterface {
     return didUpdate;
   }
 
-  List<ResponseDevice> _fromSnapshotM(List<Map<String, dynamic>> maps) {
-    return maps.map((map) => ResponseDevice(map: map)).toList();
+  DeviceModel _convertStreamDevice({Map<String, dynamic> rMap}) {
+    if (rMap["type"] == DeviceItems.magic) {
+      return MagicDeviceModel.fromMap(map: rMap);
+    }
+
+    if (rMap["type"] == DeviceItems.energenie) {
+      return EnergenieDeviceModel.fromMap(map: rMap);
+    }
+
+    throw Error.safeToString(
+      "Type is not supported ${rMap["type"]}",
+    );
   }
 
-  Stream<List<ResponseDevice>> get streamItems {
+  List<DeviceModel> _fromSnapshotM(List<Map<String, dynamic>> maps) {
+    return maps.map((map) => _convertStreamDevice(rMap: map)).toList();
+  }
+
+  Stream<List<DeviceModel>> get streamItems {
     return _sDB.instance.streamDBStorage.map(_fromSnapshotM);
   }
 }

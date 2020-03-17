@@ -3,7 +3,8 @@ import 'package:flutter_styra/models/devices/magic/magic_schedule_config.dart';
 import 'package:flutter_styra/services/http/http_service.dart';
 import 'package:flutter_styra/services/http/requests/devices/magic/screen_schedule/config_screen.dart';
 
-updateScreenScheduleConfig(MagicDeviceModel device, MagicScheduleModel delta) async {
+updateScreenScheduleConfig(
+    MagicDeviceModel device, MagicScheduleModel delta) async {
   try {
     final response = await endpointPost(
       device.host,

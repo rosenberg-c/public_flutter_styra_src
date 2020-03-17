@@ -1,7 +1,6 @@
-import 'package:flutter_styra/models/devices/devices.dart';
 import 'package:flutter_styra/shared/util-map.dart';
 
-class MagicScheduleModel  {
+class MagicScheduleModel {
   bool autoOff;
   bool autoOn;
   String disableFrom;
