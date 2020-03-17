@@ -53,7 +53,7 @@ class DeviceDatabaseService implements DeviceDatabaseInterface {
   Future update({@required Map<String, dynamic> device}) async {
     String _id = device["id"];
     device.remove("id");
-    final didUpdate = _sDB.instance.updateItem(
+    final didUpdate = await _sDB.instance.updateItem(
       root: _root,
       uid: _uid,
       collection: _collection,
