@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/services/auth/auth_service.dart';
-import 'package:flutter_styra/services/storage/concatenated/user_concatenated_services.dart';
+import 'package:flutter_styra/services/storage/tied/user_concatenated_services.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/widgets/modal_progress/modal_progress_wrapper.dart';
 import 'package:provider/provider.dart';
@@ -101,8 +101,7 @@ class _RegisterState extends State<Register> {
               if (_formKey.currentState.validate()) {
                 setState(() => widget.setLoading(true));
 
-                final result =
-                    await ConcatenatedServicesUser().tryRegisterStep1(
+                final result = await TiedServicesUser().registerFirebaseUser(
                   auth: _auth,
                   email: _emailCtrl.text,
                   pwd: _pwdCtrl.text,
@@ -117,7 +116,7 @@ class _RegisterState extends State<Register> {
                   return;
                 }
 
-                await ConcatenatedServicesUser().tryRegisterStep2(
+                await TiedServicesUser().tieUserToDatabase(
                   user: result,
                 );
               }

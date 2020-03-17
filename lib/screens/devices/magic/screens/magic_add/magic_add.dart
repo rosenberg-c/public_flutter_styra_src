@@ -3,7 +3,7 @@ import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/screens/devices/support/fields.dart';
-import 'package:flutter_styra/services/storage/concatenated/database/devices/item_database_service.dart';
+import 'package:flutter_styra/services/storage/tied/database/devices/item_database_service.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
 import 'package:flutter_styra/shared/widgets/modal_progress/modal_progress_wrapper.dart';
 import 'package:provider/provider.dart';

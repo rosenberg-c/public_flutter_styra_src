@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/screens/user/user_page.dart';
 import 'package:flutter_styra/services/auth/auth_service.dart';
-import 'package:flutter_styra/services/storage/concatenated/user_concatenated_services.dart';
+import 'package:flutter_styra/services/storage/tied/user_concatenated_services.dart';
 
 class SettingsPage extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -26,8 +26,7 @@ class SettingsPage extends StatelessWidget {
               icon: Icon(Icons.person),
               label: Text("User"),
               onPressed: () async {
-                final concatUser =
-                    await ConcatenatedServicesUser().getConcatUser(
+                final concatUser = await TiedServicesUser().getTiedUser(
                   auth: _auth,
                   userService: userService,
                 );

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/user/auth/auth_user.dart';
-import 'package:flutter_styra/services/storage/concatenated/database/devices/item_database_service.dart';
+import 'package:flutter_styra/services/storage/tied/database/devices/item_database_service.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:provider/provider.dart';
 

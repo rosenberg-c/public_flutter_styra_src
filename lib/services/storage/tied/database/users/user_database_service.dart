@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firbase/services/firebase/database/user_service_factory.dart';
 import 'package:flutter_styra/models/user/database/database_user.dart';
-import 'package:flutter_styra/services/storage/concatenated/database/users/abstract_user_database.dart';
+import 'package:flutter_styra/services/storage/tied/database/users/abstract_user_database.dart';
 import 'package:flutter_styra/shared/constants/db_keys.dart';
 
 class UserDatabaseService implements UserDatabaseInterface {

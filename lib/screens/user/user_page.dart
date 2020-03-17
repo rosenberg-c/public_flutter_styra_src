@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/services/auth/auth_service.dart';
-import 'package:flutter_styra/services/storage/concatenated/user_concatenated_services.dart';
+import 'package:flutter_styra/services/storage/tied/user_concatenated_services.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +27,7 @@ class UserPage extends StatelessWidget {
     );
   }
 
-  _buildCard(ConcatinatedUser user) {
+  _buildCard(TiedUser user) {
     return Card(
       elevation: 0.0,
       child: Container(
