@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/50081213/how-do-i-use-hexadecimal-color-strings-in-flutter/57943307#57943307
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
