@@ -3,6 +3,7 @@ import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/models/user/database/database_user.dart';
 import 'package:flutter_styra/services/auth/auth_service.dart';
 import 'package:flutter_styra/services/storage/concatenated/database/users/user_database_service.dart';
+import 'package:flutter_styra/shared/constants/db_keys.dart';
 
 class ConcatenatedServicesUser {
   Future<DeviceAuthUser> tryRegisterStep1(
@@ -28,7 +29,7 @@ class ConcatenatedServicesUser {
     await UserDatabase(
       uid: user.uid,
     ).createUser(
-        collection: "users",
+        collection: USERS_DB_REF,
         map: DatabaseUser(uid: user.uid, isAdmin: false).toMap());
   }
 
