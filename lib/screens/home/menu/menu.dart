@@ -4,65 +4,63 @@ import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/screens/home/screens/device_add_screen.dart';
 import 'package:flutter_styra/screens/settings/settings_page.dart';
 
-enum MenuEnum {
-  settings,
-  brewSettings,
-}
-
-Future _selectItem(BuildContext context, item, userService, uid) async {
-  switch (item) {
-    case MenuEnum.settings:
-      {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => SettingsPage(
-                    userService: userService,
-                  )),
-        );
-      }
-      return;
-
-    case MenuEnum.brewSettings:
-      {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) {
-            // Skip directly to add magic device
-            // Possibility for different devices
-            return DeviceAddScreen(
-              uid: uid,
-            );
-          }),
-        );
-      }
-      return;
-  }
-}
-
-void showMenuPanel(BuildContext context, didPress, userService, uid) {
+void showMenuPanel({BuildContext context, closeMenu, userService, uid}) {
   showModalBottomSheet(
     context: context,
-    builder: (context) {
+    builder: (ctx) {
       return Column(
         children: [
-          ListTile(
-            leading: Icon(Icons.ac_unit),
-            title: Text(Strings().app.menu.settings.title),
-            onTap: () {
-              didPress();
-              _selectItem(context, MenuEnum.settings, userService, uid);
-            },
+          _buildSettingsListTile(
+            context: ctx,
+            closeMenu: closeMenu,
+            userService: userService,
+            uid: uid,
           ),
-          ListTile(
-            leading: Icon(Icons.ac_unit),
-            title: Text(Strings().app.screens.addDevices.title),
-            onTap: () {
-              didPress();
-              _selectItem(context, MenuEnum.brewSettings, userService, uid);
-            },
+          _buildAddDeviceListTile(
+            context: ctx,
+            closeMenu: closeMenu,
+            userService: userService,
+            uid: uid,
           ),
         ],
+      );
+    },
+  );
+}
+
+_buildAddDeviceListTile({BuildContext context, closeMenu, userService, uid}) {
+  return ListTile(
+    leading: Icon(Icons.ac_unit),
+    title: Text(Strings().app.screens.addDevices.title),
+    onTap: () {
+      closeMenu();
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) {
+          return DeviceAddScreen(
+            uid: uid,
+          );
+        }),
+      );
+    },
+  );
+}
+
+_buildSettingsListTile({BuildContext context, closeMenu, userService, uid}) {
+  return ListTile(
+    leading: Icon(Icons.ac_unit),
+    title: Text(Strings().app.screens.addDevices.title),
+    onTap: () {
+      closeMenu();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return SettingsPage(
+              userService: userService,
+            );
+          },
+        ),
       );
     },
   );

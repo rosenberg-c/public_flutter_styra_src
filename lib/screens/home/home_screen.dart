@@ -33,7 +33,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             child: AppBarText(string: Strings().app.menu.title),
             onPressed: () {
               showMenuPanel(
-                  context, () => Navigator.pop(context), userService, user.uid);
+                context: context,
+                closeMenu: () => Navigator.pop(context),
+                userService: userService,
+                uid: user.uid,
+              );
             },
           )
         ],
