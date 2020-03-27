@@ -67,9 +67,9 @@ class EnergeniePageState extends State<EnergeniePage> {
         currentIndex: _selectedPage,
         selectedFontSize: fontSize,
         unselectedFontSize: fontSize,
-        selectedItemColor: theme.bottomNavigationBarSelected,
-        unselectedItemColor: theme.bottomNavigationBarUnSelected,
-        backgroundColor: theme.bottomNavigationBarBackground,
+        //selectedItemColor: theme.bottomNavigationBarSelected,
+        //unselectedItemColor: theme.bottomNavigationBarUnSelected,
+        //backgroundColor: theme.bottomNavigationBarBackground,
         onTap: (int index) {
           setState(() {
             _selectedPage = index;

@@ -84,7 +84,7 @@ class _EnergenieOverviewPageState extends State<EnergenieOverviewPage> {
       child: ListView(
         children: <Widget>[
           Card(
-            color: theme.pColor[100],
+            //color: theme.pColor[100],
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
