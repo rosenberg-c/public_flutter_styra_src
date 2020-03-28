@@ -1,7 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_picker/flutter_picker.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_schedule_config.dart';
 import 'package:flutter_styra/screens/devices/support/date.dart';
@@ -22,6 +23,28 @@ class EnergenieTimeSchedule extends StatefulWidget {
   @override
   _EnergenieTimeScheduleState createState() => _EnergenieTimeScheduleState();
 }
+
+const PickerData2 = '''
+[
+    [
+        1,
+        2,
+        3,
+        4
+    ],
+    [
+        11,
+        22,
+        33,
+        44
+    ],
+    [
+        "aaa",
+        "bbb",
+        "ccc"
+    ]
+]
+    ''';
 
 class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
   EnergenieScheduleConfig _delta_config = EnergenieScheduleConfig.empty();
@@ -119,14 +142,28 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
     });
   }
 
+  showPickerArray(BuildContext context) {
+    new Picker(
+        adapter: PickerDataAdapter<String>(
+            pickerdata: new JsonDecoder().convert(PickerData2), isArray: true),
+        hideHeader: true,
+        title: new Text("Please Select"),
+        onConfirm: (Picker picker, List value) {
+          print(value.toString());
+          print(picker.getSelectedValues());
+        }).showDialog(context);
+  }
+
   _onDatePressed(color, date, onChange) {
-    DatePicker.showTimePicker(
-      context,
-      theme: DatePickerTheme(containerHeight: 210.0, backgroundColor: color),
-      showTitleActions: false,
-      onChanged: (val) => onChange(val),
-      currentTime: date,
-    );
+//    DatePicker.showTimePicker(
+//      context,
+//      theme: DatePickerTheme(containerHeight: 210.0, backgroundColor: color),
+//      showTitleActions: false,
+//      onChanged: (val) => onChange(val),
+//      currentTime: date,
+//    );
+
+    showPickerArray(context);
   }
 
   _showIntegerDialog() {
