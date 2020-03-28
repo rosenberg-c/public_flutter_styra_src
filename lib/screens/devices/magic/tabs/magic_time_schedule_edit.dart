@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_styra/models/devices/magic/magic_device_model.dart';
 import 'package:flutter_styra/models/devices/magic/magic_schedule_config.dart';
 import 'package:flutter_styra/screens/devices/support/date.dart';
@@ -120,13 +119,13 @@ class _MagicTimeDeltaEditState extends State<MagicTimeDeltaEdit> {
   }
 
   _onDatePressed(color, date, onChange) {
-    DatePicker.showTimePicker(
-      context,
-      theme: DatePickerTheme(containerHeight: 210.0, backgroundColor: color),
-      showTitleActions: false,
-      onChanged: (val) => onChange(val),
-      currentTime: date,
-    );
+//    DatePicker.showTimePicker(
+//      context,
+//      theme: DatePickerTheme(containerHeight: 210.0, backgroundColor: color),
+//      showTitleActions: false,
+//      onChanged: (val) => onChange(val),
+//      currentTime: date,
+//    );
   }
 
   _showIntegerDialog() {

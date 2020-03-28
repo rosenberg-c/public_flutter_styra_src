@@ -126,22 +126,6 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
     return val.toString().padLeft(2, '0');
   }
 
-  _onChangeDisable(time) {
-    setState(() {
-      _disableFromHour = time.hour;
-      _disableFromMinute = time.minute;
-      _disableFromSecond = time.second;
-    });
-  }
-
-  _onChangeEnable(time) {
-    setState(() {
-      _enableFromHour = time.hour;
-      _enableFromMinute = time.minute;
-      _enableFromSecond = time.second;
-    });
-  }
-
   showPickerArray(BuildContext context) {
     new Picker(
         adapter: PickerDataAdapter<String>(
@@ -154,7 +138,7 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
         }).showDialog(context);
   }
 
-  _onDatePressed(color, date, onChange) {
+  _onDatePressed({color, DateTime date, onChange}) {
 //    DatePicker.showTimePicker(
 //      context,
 //      theme: DatePickerTheme(containerHeight: 210.0, backgroundColor: color),
@@ -163,7 +147,38 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
 //      currentTime: date,
 //    );
 
-    showPickerArray(context);
+    //showPickerArray(context);
+    List<int> _hours = Iterable<int>.generate(24).toList();
+    List<int> _minutes = Iterable<int>.generate(60).toList();
+    List<int> _secs = Iterable<int>.generate(60).toList();
+    padWithZero(_list) {
+      return _list.map((element) {
+        return _padDigit(element);
+      }).toList();
+    }
+
+    new Picker(
+      selecteds: [date.hour, date.minute, date.second],
+        adapter: PickerDataAdapter<String>(
+          pickerdata: [
+            padWithZero(_hours),
+            padWithZero(_minutes),
+            padWithZero(_secs)
+          ],
+          isArray: true,
+        ),
+        hideHeader: true,
+        title: new Text("Select time"),
+        onConfirm: (Picker picker, List value) {
+
+          onChange(
+            buildDateTimeObj(
+              hour: value[0],
+              minute: value[1],
+              second: value[2],
+            ),
+          );
+        }).showDialog(context);
   }
 
   _showIntegerDialog() {
@@ -263,13 +278,19 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
         "${_padDigit(_disableFromHour)}:${_padDigit(_disableFromMinute)}:${_padDigit(_disableFromSecond)}",
       ),
       onTap: () => _onDatePressed(
-          theme.mThemeData.scaffoldBackgroundColor,
-          buildDateTimeObj(
+          color: theme.mThemeData.scaffoldBackgroundColor,
+          date: buildDateTimeObj(
             hour: _disableFromHour,
             minute: _disableFromMinute,
             second: _disableFromSecond,
           ),
-          _onChangeDisable),
+          onChange: (time) {
+            setState(() {
+              _disableFromHour = time.hour;
+              _disableFromMinute = time.minute;
+              _disableFromSecond = time.second;
+            });
+          }),
     );
   }
 
@@ -282,13 +303,19 @@ class _EnergenieTimeScheduleState extends State<EnergenieTimeSchedule> {
         "${_padDigit(_enableFromHour)}:${_padDigit(_enableFromMinute)}:${_padDigit(_enableFromSecond)}",
       ),
       onTap: () => _onDatePressed(
-          theme.mThemeData.scaffoldBackgroundColor,
-          buildDateTimeObj(
+          color: theme.mThemeData.scaffoldBackgroundColor,
+          date: buildDateTimeObj(
             hour: _enableFromHour,
             minute: _enableFromMinute,
             second: _enableFromSecond,
           ),
-          _onChangeEnable),
+          onChange: (time) {
+            setState(() {
+              _enableFromHour = time.hour;
+              _enableFromMinute = time.minute;
+              _enableFromSecond = time.second;
+            });
+          }),
     );
   }
 
