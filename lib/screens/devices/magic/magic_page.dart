@@ -12,6 +12,8 @@ import 'tabs/magic_remote_control.dart';
 import 'tabs/magic_time_schedule_edit.dart';
 
 class MagicPage extends StatefulWidget {
+  static String pageKey = "__magic-page__";
+
   final MagicDeviceModel device;
 
   MagicPage({@required this.device});

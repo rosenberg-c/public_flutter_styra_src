@@ -12,6 +12,8 @@ import 'tabs/energenie_overview_page.dart';
 import 'tabs/energenie_remote_control.dart';
 
 class EnergeniePage extends StatefulWidget {
+  static String pageKey = "__energenie-page__";
+
   final EnergenieDeviceModel device;
 
   EnergeniePage({@required this.device});
