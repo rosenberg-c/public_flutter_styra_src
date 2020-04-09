@@ -39,12 +39,12 @@ class EnergenieDeviceModel extends DeviceModel {
 
   static EnergenieDeviceModel fromMap({Map<String, dynamic> map}) {
     return EnergenieDeviceModel(
-      id: getKey(map, "id", ""),
-      name: getKey(map, "name", ""),
-      host: getKey(map, "host", ""),
-      requestPort: getKey(map, "requestPort", 0),
-      type: getKey(map, "type", ""),
-      weight: getKey(map, "weight", 100),
+      id: getKey(map: map, key: "id", defaultVal: ""),
+      name: getKey(map: map, key: "name", defaultVal: ""),
+      host: getKey(map: map, key: "host", defaultVal: ""),
+      requestPort: getKey(map: map, key: "requestPort", defaultVal: 0),
+      type: getKey(map: map, key: "type", defaultVal: ""),
+      weight: getKey(map: map, key: "weight", defaultVal: 100),
     );
   }
 

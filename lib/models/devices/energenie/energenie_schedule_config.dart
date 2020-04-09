@@ -21,13 +21,13 @@ class EnergenieScheduleConfig {
 
   static EnergenieScheduleConfig fromMap({Map<String, dynamic> map}) {
     return EnergenieScheduleConfig(
-      autoOff: getKey(map, "auto_off", false),
-      autoOn: getKey(map, "auto_on", false),
-      disableFrom: getKey(map, "disable_from", "00:00:00"),
-      enableFrom: getKey(map, "enable_from", "00:00:00"),
-      ignoreGPIO: getKey(map, "ignore_gpio", false),
-      name: getKey(map, "name", "none"),
-      updateCycle: getKey(map, "update_cycle", 60),
+      autoOff: getKey(map: map, key: "auto_off", defaultVal: false),
+      autoOn: getKey(map: map, key: "auto_on", defaultVal: false),
+      disableFrom: getKey(map: map, key: "disable_from", defaultVal: "00:00:00"),
+      enableFrom: getKey(map: map, key: "enable_from", defaultVal: "00:00:00"),
+      ignoreGPIO: getKey(map: map, key: "ignore_gpio", defaultVal: false),
+      name: getKey(map: map, key: "name", defaultVal: "none"),
+      updateCycle: getKey(map: map, key: "update_cycle", defaultVal: 60),
     );
   }
 
