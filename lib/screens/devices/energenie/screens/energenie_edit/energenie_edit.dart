@@ -19,12 +19,25 @@ class EnergenieEditScreen extends StatefulWidget {
 
 class _EnergenieEditScreenState extends State<EnergenieEditScreen> {
   bool inEdit = false;
+  DeviceAuthUser authUser;
+  DeviceDatabaseService databaseService;
 
   _deleteDevice(DeviceAuthUser user, deviceDB) async {
     await deviceDB.delete(id: widget.device.id);
   }
 
-  _buildAppBar(authUser, databaseService) {
+  _deleteOnPress(authUser, databaseService) {
+    deleteDialog(
+      context: context,
+      onOk: () async {
+        await _deleteDevice(authUser, databaseService);
+
+        Navigator.of(context).popUntil((route) => route.isFirst);
+      },
+    );
+  }
+
+  _buildAppBar(deleteOnPress) {
     final theme = Provider.of<ThemeService>(context);
     return AppBar(
       title: Text("Edit"),
@@ -38,14 +51,7 @@ class _EnergenieEditScreenState extends State<EnergenieEditScreen> {
                 ),
                 label: Text(""),
                 onPressed: () {
-                  deleteDialog(
-                    context: context,
-                    onOk: () async {
-                      await _deleteDevice(authUser, databaseService);
-
-                      Navigator.of(context).popUntil((route) => route.isFirst);
-                    },
-                  );
+                  deleteOnPress();
                 },
               )
             : Container(),
@@ -70,18 +76,36 @@ class _EnergenieEditScreenState extends State<EnergenieEditScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final authUser = Provider.of<DeviceAuthUser>(context);
-    final DeviceDatabaseService databaseService = DeviceDatabaseService();
-    databaseService.setupRef(uid: authUser.uid);
+  void initState() {
+    try {
+      authUser = Provider.of<DeviceAuthUser>(context);
+      databaseService = DeviceDatabaseService();
+      databaseService.setupRef(uid: authUser.uid);
+    } catch (e) {
+      print("DATABASE SERVICE IS NOT IMPLEMENTED");
+    }
 
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(authUser, databaseService),
+      appBar: _buildAppBar(
+        databaseService != null
+            ? _deleteOnPress(authUser, databaseService)
+            : () {
+                print("DELETE NOT IMMPLEMeNTED");
+              },
+      ),
       body: EnergenieEditPage(
-        authUser: authUser,
         device: widget.device,
         inEdit: inEdit,
-        databaseService: databaseService,
+        update: databaseService != null
+            ? databaseService.update
+            : () {
+                print("UPDATE NOT IMPLEMENTED");
+              },
       ),
     );
   }

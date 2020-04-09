@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styra/app_locale/strings/app_strings.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
-import 'package:flutter_styra/models/user/auth/auth_user.dart';
 import 'package:flutter_styra/screens/devices/support/fields.dart';
 import 'package:flutter_styra/screens/devices/support/pickers.dart';
-import 'package:flutter_styra/services/storage/tied/database/devices/item_database_service.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/functions/utils.dart';
 import 'package:flutter_styra/shared/validators/string_validate.dart';
 import 'package:provider/provider.dart';
 
 class EnergenieEditPage extends StatefulWidget {
-  final DeviceAuthUser authUser;
   final EnergenieDeviceModel device;
   final inEdit;
-  final DeviceDatabaseService databaseService;
+  final Function update;
 
   EnergenieEditPage({
-    @required this.authUser,
     @required this.device,
     @required this.inEdit,
-    @required this.databaseService,
+    @required this.update,
   });
 
   @override
@@ -147,7 +143,7 @@ class _EnergenieEditPageState extends State<EnergenieEditPage> {
         type: _type ?? widget.device.type.trim(),
         weight: _weight ?? widget.device.weight,
       );
-      await widget.databaseService.update(device: newDevice.toMap());
+      await widget.update(device: newDevice.toMap());
       Navigator.of(context).popUntil(
         (route) => route.isFirst,
       );
