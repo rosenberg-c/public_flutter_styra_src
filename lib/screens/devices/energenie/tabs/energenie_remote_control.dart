@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_styra/models/devices/energenie/energenie_device_model.dart';
+import 'package:flutter_styra/shared/widgets/ui/buttons/app_buttons.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/control_off.dart';
 import 'package:flutter_styra/services/http/requests/devices/energenie/socket_control/control_on.dart';
 import 'package:flutter_styra/services/http/requests/general/device_control/device_reboot.dart';
@@ -74,11 +75,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("On"),
-                    onPressed: () => energenieSocketOn(widget.device, 1),
+                    onPressed: () async => energenieSocketOn(widget.device, 1),
                   ),
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("Off"),
                     onPressed: () => energenieSocketOff(widget.device, 1),
                   )
@@ -95,11 +96,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("On"),
                     onPressed: () => energenieSocketOn(widget.device, 2),
                   ),
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("Off"),
                     onPressed: () => energenieSocketOff(widget.device, 2),
                   )
@@ -116,11 +117,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("On"),
                     onPressed: () => energenieSocketOn(widget.device, 3),
                   ),
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("Off"),
                     onPressed: () => energenieSocketOff(widget.device, 3),
                   )
@@ -137,11 +138,11 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("On"),
                     onPressed: () => energenieSocketOn(widget.device, 4),
                   ),
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("Off"),
                     onPressed: () => energenieSocketOff(widget.device, 4),
                   )
@@ -158,7 +159,7 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("Poweroff"),
                     onPressed: () async {
                       await deviceShutdown(
@@ -167,7 +168,7 @@ class EenergenieRemoteControlState extends State<EnergenieRemoteControl> {
                       );
                     },
                   ),
-                  RaisedButton(
+                  AppRaisedButton(
                     child: Text("Reboot"),
                     onPressed: () async {
                       await deviceReboot(

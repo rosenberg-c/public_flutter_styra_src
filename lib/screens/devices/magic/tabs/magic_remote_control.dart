@@ -8,6 +8,7 @@ import 'package:flutter_styra/services/http/requests/general/device_control/devi
 import 'package:flutter_styra/services/http/requests/general/device_control/device_shutdown.dart';
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/shared/connection_status.dart';
+import 'package:flutter_styra/shared/widgets/ui/buttons/app_buttons.dart';
 
 class MagicRemoteControl extends StatefulWidget {
   final MagicDeviceModel device;
@@ -79,11 +80,11 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        RaisedButton(
+                        AppRaisedButton(
                           child: Text("On"),
                           onPressed: () => magicScreenOn(widget.device),
                         ),
-                        RaisedButton(
+                        AppRaisedButton(
                           child: Text("Off"),
                           onPressed: () => magicScreenOff(widget.device),
                         )
@@ -100,7 +101,7 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        RaisedButton(
+                        AppRaisedButton(
                           child: Text("Poweroff"),
                           onPressed: () async {
                             await deviceShutdown(
@@ -109,7 +110,7 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                             );
                           },
                         ),
-                        RaisedButton(
+                        AppRaisedButton(
                           child: Text("Reboot"),
                           onPressed: () async {
                             await deviceReboot(
@@ -131,7 +132,7 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-//                        RaisedButton(
+//                        AppRaisedButton(
 //                          child: Text("https"),
 //                          onPressed: () {
 //                            Navigator.push(
@@ -145,7 +146,7 @@ class _MagicRemoteControlState extends State<MagicRemoteControl> {
 //                          },
 //                        ),
                         Container(),
-                        RaisedButton(
+                        AppRaisedButton(
                           child: Text("http"),
                           onPressed: () {
                             Navigator.push(

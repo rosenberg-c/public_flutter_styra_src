@@ -11,6 +11,7 @@ import 'package:flutter_styra/services/http/requests/devices/magic/screen_schedu
 import 'package:flutter_styra/services/http/requests/general/utils/get-online.dart';
 import 'package:flutter_styra/services/theme/theme_service.dart';
 import 'package:flutter_styra/shared/connection_status.dart';
+import 'package:flutter_styra/shared/widgets/ui/buttons/app_buttons.dart';
 import 'package:provider/provider.dart';
 
 class MagicTimeDeltaEdit extends StatefulWidget {
@@ -270,7 +271,7 @@ class _MagicTimeDeltaEditState extends State<MagicTimeDeltaEdit> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        RaisedButton(
+        AppRaisedButton(
           child: Text("Update"),
           onPressed: () async {
             FocusScope.of(context).requestFocus(FocusNode());

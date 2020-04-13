@@ -16,3 +16,22 @@ class Loading extends StatelessWidget {
     );
   }
 }
+
+class Loading2 extends StatelessWidget {
+  final double size;
+
+  Loading2({this.size});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: size,width: size,
+      child: Center(
+        child: CircularProgressIndicator(
+          //color: Provider.of<ThemeService>(context).pColor,
+          //size: size,
+        ),
+      ),
+    );
+  }
+}
