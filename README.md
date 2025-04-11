@@ -1,3 +1,6 @@
+# ⚠️ This repository is no longer maintained
+
+
 # Styra
 An open source iOS and Android app built with Flutter
 for controlling raspberry pi´s with  
